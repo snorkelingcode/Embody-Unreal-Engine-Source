@@ -1,8 +1,10 @@
 #include "TCPActor.h"
+#include "ProceduralAnimComponent.h"
 #include "Modules/ModuleManager.h"
 #include "IPixelStreaming2Module.h"
 #include "IPixelStreaming2Streamer.h"
 #include "IPixelStreaming2InputHandler.h"
+#include "Kismet/GameplayStatics.h"
 #include "Async/Async.h"
 
 ATCPActor::ATCPActor()
@@ -110,7 +112,120 @@ void ATCPActor::RegisterPixelStreamingHandler()
 
 void ATCPActor::HandleReceivedString(const FString& ReceivedString)
 {
+	// Auto-process MAN_ commands in C++ before broadcasting
+	if (ReceivedString.StartsWith(TEXT("MAN_")))
+	{
+		ProcessMannequinCommand(ReceivedString);
+	}
+
 	OnStringReceived.Broadcast(ReceivedString);
+}
+
+bool ATCPActor::ProcessMannequinCommand(const FString& Command)
+{
+	if (!Command.StartsWith(TEXT("MAN_")))
+	{
+		return false;
+	}
+
+	UWorld* World = GetWorld();
+	if (!World)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("[MAN] No world available"));
+		return false;
+	}
+
+	// Handle MAN_RESET — clear all bone overrides on all characters
+	if (Command.Equals(TEXT("MAN_RESET"), ESearchCase::IgnoreCase))
+	{
+		TArray<AActor*> AllActors;
+		UGameplayStatics::GetAllActorsOfClass(World, AActor::StaticClass(), AllActors);
+		for (AActor* Actor : AllActors)
+		{
+			if (!Actor) continue;
+			UProceduralAnimComponent* AnimComp = Actor->FindComponentByClass<UProceduralAnimComponent>();
+			if (AnimComp)
+			{
+				AnimComp->ClearAllBoneRotations();
+			}
+		}
+		UE_LOG(LogTemp, Log, TEXT("[MAN] Reset all bone overrides"));
+		return true;
+	}
+
+	bool bApplied = false;
+
+	// Strategy 1: Find actors with the Metahuman tag that have the component
+	TArray<AActor*> TaggedActors;
+	UGameplayStatics::GetAllActorsWithTag(World, FName(TEXT("Metahuman")), TaggedActors);
+
+	for (AActor* Actor : TaggedActors)
+	{
+		if (!Actor) continue;
+
+		UProceduralAnimComponent* AnimComp = Actor->FindComponentByClass<UProceduralAnimComponent>();
+		if (!AnimComp)
+		{
+			static TSet<FString> LoggedMissing;
+			if (!LoggedMissing.Contains(Actor->GetName()))
+			{
+				UE_LOG(LogTemp, Warning, TEXT("[MAN] Actor '%s' has Metahuman tag but no ProceduralAnimComponent"), *Actor->GetName());
+				LoggedMissing.Add(Actor->GetName());
+			}
+			continue;
+		}
+
+		if (AnimComp->ApplyMannequinCommand(Command))
+		{
+			bApplied = true;
+			static bool bLoggedTagged = false;
+			if (!bLoggedTagged)
+			{
+				UE_LOG(LogTemp, Log, TEXT("[MAN] TCPActor writing to ProceduralAnimComponent %p on '%s'. Bones now: %d"), AnimComp, *Actor->GetName(), AnimComp->GetAllBoneRotations().Num());
+				bLoggedTagged = true;
+			}
+		}
+	}
+
+	// Strategy 2: If no tagged actors had the component, find ALL actors with the component
+	if (!bApplied)
+	{
+		TArray<AActor*> AllActors;
+		UGameplayStatics::GetAllActorsOfClass(World, AActor::StaticClass(), AllActors);
+
+		for (AActor* Actor : AllActors)
+		{
+			if (!Actor) continue;
+
+			UProceduralAnimComponent* AnimComp = Actor->FindComponentByClass<UProceduralAnimComponent>();
+			if (AnimComp)
+			{
+				if (AnimComp->ApplyMannequinCommand(Command))
+				{
+					bApplied = true;
+					// Log once per actor we find this way
+					static TSet<FString> LoggedFallbacks;
+					if (!LoggedFallbacks.Contains(Actor->GetName()))
+					{
+						UE_LOG(LogTemp, Log, TEXT("[MAN] Found ProceduralAnimComponent on '%s' (no Metahuman tag, using fallback search)"), *Actor->GetName());
+						LoggedFallbacks.Add(Actor->GetName());
+					}
+				}
+			}
+		}
+	}
+
+	if (!bApplied)
+	{
+		static bool bLoggedOnce = false;
+		if (!bLoggedOnce)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("[MAN] No actors with ProceduralAnimComponent found. Add the component to your character blueprint."));
+			bLoggedOnce = true;
+		}
+	}
+
+	return bApplied;
 }
 
 void ATCPActor::EndPlay(const EEndPlayReason::Type EndPlayReason)

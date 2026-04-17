@@ -42,6 +42,20 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "TCP")
 	FOnStringReceived OnStringReceived;
 
+	/**
+	 * Process a MAN_ command string and apply it to all actors with the Metahuman tag.
+	 * Finds all actors with "Metahuman" tag, gets their ProceduralAnimComponent,
+	 * and applies the bone rotation command.
+	 *
+	 * Format: MAN_bonename_X_Y_Z  (e.g. MAN_head_10.0_5.0_-3.0)
+	 * Handles bone names with underscores (e.g. MAN_spine_01_10.0_5.0_0.0)
+	 *
+	 * @param Command The full command string (must start with MAN_)
+	 * @return True if the command was applied to at least one actor
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Procedural Animation")
+	bool ProcessMannequinCommand(const FString& Command);
+
 	// TCP server port (default 7777)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TCP")
 	int32 TCPPort = 7777;

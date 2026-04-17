@@ -1,0 +1,13 @@
+# Whisper ThirdParty binaries — too large for GitHub (47–124 MB CUDA libs)
+# Download from: https://github.com/ggerganov/whisper.cpp/releases
+Source/ThirdParty/Lib/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
