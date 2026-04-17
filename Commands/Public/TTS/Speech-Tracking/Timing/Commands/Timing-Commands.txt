@@ -1,0 +1,15 @@
+No POST commands - timing is entirely UE-driven (push notifications over DataChannel)
+
+TTS_Started - UE notifies frontend that the avatar has begun speaking - GET
+TTS_Complete - UE notifies frontend that the avatar has finished speaking - GET
+{duration} - Float representing audio duration in seconds (fallback timing mechanism) - GET
+
+Frontend behavior on receive:
+- TTS_Started: sets isSpeaking = true, shows LIVE indicator
+- TTS_Complete: sets isSpeaking = false, triggers next chunk if in chunk queue mode (100ms delay)
+- {duration}: fallback - parses float, waits that many ms, then processes next chunk (only used in chunk mode)
+
+Chunk sequencing:
+- TTS_Complete is the primary signal to advance to the next chunk
+- Duration-based timing is the fallback if TTS_Complete is not received
+- Both mechanisms only fire when isProcessingRef.current is true (chunk mode active)

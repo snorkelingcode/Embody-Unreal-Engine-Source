@@ -1,0 +1,25 @@
+Scene Lighting - POST
+
+Directional Light (Global):
+DL_Int_{value} - Directional light intensity (0-10, step 0.01)
+DL_Color_{r}_{g}_{b} - Directional light color (r/g/b floats 0-1)
+
+Volume Light (Per-Object, requires spawned LIGHT.Volume):
+LIGHTC_{tag}_{r}_{g}_{b} - Set light color by tag (r/g/b floats 0-1)
+LIGHTI_{tag}_{value} - Set light intensity by tag (0-100, step 0.1)
+
+Static Presets (for LIGHT.Volume objects):
+  Warm Glow - r:1 g:0.7 b:0.4, intensity 5
+  Cool Blue - r:0.4 g:0.6 b:1, intensity 4
+  Neon Pink - r:1 g:0.2 b:0.8, intensity 8
+  Forest Green - r:0.2 g:0.8 b:0.3, intensity 3
+  Sunset - r:1 g:0.5 b:0.2, intensity 6
+  Moonlight - r:0.7 g:0.8 b:1, intensity 2
+  Fire - r:1 g:0.3 b:0.1, intensity 10
+  Purple Haze - r:0.6 g:0.2 b:1, intensity 5
+
+Animated Multi-Light Effects (spawn extra LIGHT.Volume objects, animate at 20fps):
+  Fireflies (+5 lights) - Blinking yellow-green lights drifting randomly
+  Spooky Ghosts (+3 lights) - Slow eerie blue floating lights
+  Rave Party (+4 lights) - Fast multi-color dance lights
+  Aurora Borealis (+6 lights) - Sweeping green-blue northern lights curtain

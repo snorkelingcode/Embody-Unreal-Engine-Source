@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Zach",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Zach",
+    "id": "zach",
+    "voiceId": "u38fdtX4yQwE9e1F0vPp",
+    "character": "MetaHuman 4 (Default Male)",
+    "isDefault": false
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=u38fdtX4yQwE9e1F0vPp",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

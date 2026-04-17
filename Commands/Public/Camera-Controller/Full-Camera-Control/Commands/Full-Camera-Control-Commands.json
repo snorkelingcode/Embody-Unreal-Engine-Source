@@ -1,0 +1,33 @@
+{
+  "api": "Full Camera Control",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Manual 6-axis camera control with position (X, Y, Z) and rotation (Pitch, Yaw, Roll). Sends all 6 values in a single command. Position and rotation update together on every slider change.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CAMSTREAM_{x}_{y}_{z}_{pitch}_{yaw}_{roll}",
+        "description": "Sets camera position and rotation simultaneously. All 6 values sent together.",
+        "params": {
+          "x": "number - horizontal position (-500 to 500)",
+          "y": "number - vertical position (-500 to 500)",
+          "z": "number - depth/forward position (-500 to 500)",
+          "pitch": "number - up/down rotation (-180 to 180 degrees)",
+          "yaw": "number - left/right rotation (-180 to 180 degrees)",
+          "roll": "number - tilt rotation (-180 to 180 degrees)"
+        },
+        "defaults": {
+          "x": 0, "y": 0, "z": 0,
+          "pitch": 0, "yaw": 0, "roll": 0
+        },
+        "examples": [
+          "CAMSTREAM_0_0_0_0_0_0",
+          "CAMSTREAM_0_50_0_-15_0_0",
+          "CAMSTREAM_100_0_-200_0_45_0",
+          "CAMSTREAM_0_0_0_0_0_15"
+        ],
+        "notes": "Position values are offsets from the current CAMSHOT preset. Set a CAMSHOT first, then use CAMSTREAM to fine-tune."
+      }
+    ],
+    "GET": []
+  }
+}

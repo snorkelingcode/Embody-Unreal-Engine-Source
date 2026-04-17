@@ -1,0 +1,9 @@
+Grain - POST
+GRAIN_GrainInten_{value} - Film grain intensity (0-1, step 0.01)
+GRAIN_GrainShadow_{value} - Grain shadow intensity (0-1, step 0.01)
+GRAIN_GrainMidtones_{value} - Grain midtone intensity (0-1, step 0.01)
+GRAIN_GrainHighlight_{value} - Grain highlight intensity (0-1, step 0.01)
+GRAIN_HighlightsMax_{value} - Grain highlights maximum (0-1, step 0.01)
+GRAIN_HighlightsMin_{value} - Grain highlights minimum (0-1, step 0.01)
+GRAIN_ShadowMax_{value} - Grain shadow maximum (0-1, step 0.01)
+GRAIN_TexelSize_{value} - Grain texel size (0.1-2, step 0.01)

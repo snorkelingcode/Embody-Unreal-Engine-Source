@@ -1,0 +1,14 @@
+# Embody Animation Server
+# pip install -r requirements_server.txt
+
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+numpy>=1.24.0
+sentence-transformers>=2.2.0
+
+# PyTorch with CUDA (replace cu121 with your CUDA version — check with: nvcc --version)
+# After installing the above, run:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# CPU-only fallback (no GPU, slow):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu

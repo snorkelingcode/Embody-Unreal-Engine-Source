@@ -1,0 +1,91 @@
+{
+  "api": "Animated Post-Processing Effects",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "mechanism": {
+    "type": "setInterval",
+    "fps": 30,
+    "description": "Animations run at 30fps using setInterval. Each frame computes time-based values using sin/cos/random functions and sends the corresponding post-processing commands."
+  },
+  "animations": [
+    {
+      "id": "pulse",
+      "name": "Pulse",
+      "description": "Rhythmic saturation and bloom pulses",
+      "duration": "3s loop",
+      "commands_used": ["CGG_Global_Saturation", "BloomInt"],
+      "behavior": "Sinusoidal saturation (0.5-1.5) and bloom (0.375-0.975) oscillation"
+    },
+    {
+      "id": "day-to-night",
+      "name": "Day to Night",
+      "description": "Smooth transition from warm day to cool night",
+      "duration": "10s loop",
+      "commands_used": ["CG_Temp", "EXPO_Comp"],
+      "behavior": "Temperature ramps from 4500K to 8000K while exposure drops from 0 to -2"
+    },
+    {
+      "id": "cyberpunk-glitch",
+      "name": "Cyberpunk Glitch",
+      "description": "Digital distortion with chromatic aberration",
+      "duration": "5s loop",
+      "commands_used": ["CHROME_Int", "BloomInt", "CGG_Global_Saturation"],
+      "behavior": "Random chromatic aberration spikes (20% chance per frame), sinusoidal bloom and saturation"
+    },
+    {
+      "id": "dream-sequence",
+      "name": "Dream Sequence",
+      "description": "Soft ethereal waves with bloom and grain",
+      "duration": "8s loop",
+      "commands_used": ["BloomInt", "GRAIN_GrainInten", "CGG_Global_Saturation"],
+      "behavior": "Dual-wave bloom (0.8-1.6), grain (0.05-0.15), and desaturated color (0.6-1.0)"
+    },
+    {
+      "id": "neon-nights",
+      "name": "Neon Nights",
+      "description": "Vibrant RGB color cycling with bloom",
+      "duration": "6s loop",
+      "commands_used": ["CGG_Highlights_Gain", "BloomInt"],
+      "behavior": "Phase-offset RGB gain cycling on highlights with pulsing bloom (1.0-2.0)"
+    },
+    {
+      "id": "underwater",
+      "name": "Underwater",
+      "description": "Blue-green tint with distortion waves",
+      "duration": "7s loop",
+      "commands_used": ["CHROME_Int", "CG_Temp", "CG_Tint", "CGG_Global_Gain"],
+      "behavior": "Chromatic aberration waves (0.05-0.35), cool temperature (6500-7500K), negative tint, blue-shifted gain"
+    },
+    {
+      "id": "fever-dream",
+      "name": "Fever Dream",
+      "description": "Unsettling color and temperature shifts",
+      "duration": "5s loop",
+      "commands_used": ["CG_Temp", "CGG_Global_Saturation", "GRAIN_GrainInten"],
+      "behavior": "Chaotic temperature swings (3500-9500K), erratic saturation (0.3-1.7), grain pulses (0.0-0.3)"
+    },
+    {
+      "id": "strobe",
+      "name": "Strobe Effect",
+      "description": "Rapid flickering bloom and exposure",
+      "duration": "2s loop",
+      "commands_used": ["BloomInt", "EXPO_Comp"],
+      "behavior": "Binary alternation at 10Hz between bright (bloom 2.5, exposure +1) and dark (bloom 0.1, exposure -1)"
+    },
+    {
+      "id": "color-shift",
+      "name": "Color Shift",
+      "description": "Smooth hue rotation through spectrum",
+      "duration": "12s loop",
+      "commands_used": ["CGG_Global_Gain"],
+      "behavior": "Phase-offset RGB gain sinusoidal rotation (0.7-1.3) creating smooth hue cycling"
+    },
+    {
+      "id": "breathing",
+      "name": "Breathing",
+      "description": "Slow expansion and contraction of light",
+      "duration": "6s loop",
+      "commands_used": ["EXPO_Comp", "VIG", "BloomInt"],
+      "behavior": "Sinusoidal exposure (-0.5 to +0.5), vignette (0.2-0.8), and bloom (0.475-0.875)"
+    }
+  ]
+}

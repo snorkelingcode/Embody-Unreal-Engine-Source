@@ -1,0 +1,60 @@
+{
+  "api": "Animated Hair",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Time-based animated hair effects. Frontend runs a 30fps setInterval loop that sends HAIRF/HAIRC/HCR/HCG/HCB commands with values computed from math functions. Same architecture as animated post processing on the Directors Cut page and animated makeup.",
+  "mechanism": {
+    "frameRate": "30fps (setInterval at 1000/30ms)",
+    "toggle": "Click to start, click again to stop. Only one animation active at a time.",
+    "persistence": "Animation survives page navigation via module-level refs"
+  },
+  "animations": [
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "description": "Base hair color slowly cycles through the full spectrum",
+      "duration": 8,
+      "commands": ["HCR", "HCG", "HCB"],
+      "update": "RGB phase-shifted sin waves (120 degrees apart) cycle HCR/HCG/HCB through the full color spectrum"
+    },
+    {
+      "id": "firelight",
+      "name": "Firelight",
+      "description": "Warm flickering reds, oranges, and yellows like firelit hair",
+      "duration": 3,
+      "commands": ["HCR", "HCG", "HCB", "HAIRC_HighlightshairDye", "HAIRF_Highlights"],
+      "update": "Random flicker (30% chance per frame) spikes HCR 0.7-1.0, HCG 0.3-0.7, HCB stays low. Highlights pulse 0.3-0.8 with orange dye"
+    },
+    {
+      "id": "ocean-wave",
+      "name": "Ocean Wave",
+      "description": "Cool blue-teal gradients that flow through the hair via ombre",
+      "duration": 6,
+      "commands": ["HAIRC_OmbrehairDye", "HAIRF_Ombre", "HAIRF_OmbreIntensity"],
+      "update": "sin(t * PI / 3) drives ombre 0.4-0.9, ombre dye oscillates between deep blue (0.1,0.3,0.8) and teal (0.1,0.7,0.6)"
+    },
+    {
+      "id": "disco",
+      "name": "Disco",
+      "description": "Rapid highlights color changes with high specular for a party effect",
+      "duration": 4,
+      "commands": ["HAIRC_HighlightshairDye", "HAIRF_Highlights", "HAIRF_Spec0", "HAIRF_Spec1"],
+      "update": "Fast RGB cycling on highlights dye (3x speed), highlights forced to 0.8, specular pulses 0.3-0.7 for shimmer"
+    },
+    {
+      "id": "seasons",
+      "name": "Seasons",
+      "description": "Slow transition through seasonal hair tones: spring green, summer gold, autumn red, winter white",
+      "duration": 12,
+      "commands": ["HCR", "HCG", "HCB", "HAIRF_hairMelanin", "HAIRF_hairRedness"],
+      "update": "4-phase sin cycle: spring (0.4,0.6,0.2), summer (0.9,0.8,0.5), autumn (0.7,0.3,0.1), winter (0.9,0.9,0.9) with matching melanin/redness"
+    },
+    {
+      "id": "pulse",
+      "name": "Pulse",
+      "description": "Hair specular and opacity pulse rhythmically for a breathing light effect",
+      "duration": 3,
+      "commands": ["HAIRF_Spec0", "HAIRF_Spec1", "HAIRF_OpacityNear", "HAIRF_OpacityFar"],
+      "update": "sin(t * PI) drives Spec0/Spec1 0.2-0.7 and OpacityNear 0.6-1.0, OpacityFar 0.3-0.8 in sync"
+    }
+  ]
+}

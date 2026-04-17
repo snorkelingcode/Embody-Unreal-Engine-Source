@@ -1,0 +1,38 @@
+Color Grading - POST
+Controls across 4 levels (Global, Shadows, Midtones, Highlights) x 5 properties each.
+Values are RGB or RGBA computed from a hex color picker multiplied by an intensity slider.
+
+Saturation (RGBA):
+CGG_Global_Saturation_{r}_{g}_{b}_{a} - Global saturation per channel
+CGG_Shadows_Saturation_{r}_{g}_{b}_{a} - Shadows saturation per channel
+CGG_Midtones_Saturation_{r}_{g}_{b}_{a} - Midtones saturation per channel
+CGG_Highlights_Saturation_{r}_{g}_{b}_{a} - Highlights saturation per channel
+
+Contrast (RGBA):
+CGG_Global_Contrast_{r}_{g}_{b}_{a} - Global contrast per channel
+CGG_Shadows_Contrast_{r}_{g}_{b}_{a} - Shadows contrast per channel
+CGG_Midtones_Contrast_{r}_{g}_{b}_{a} - Midtones contrast per channel
+CGG_Highlights_Contrast_{r}_{g}_{b}_{a} - Highlights contrast per channel
+
+Gamma (RGBA):
+CGG_Global_Gamma_{r}_{g}_{b}_{a} - Global gamma per channel
+CGG_Shadows_Gamma_{r}_{g}_{b}_{a} - Shadows gamma per channel
+CGG_Midtones_Gamma_{r}_{g}_{b}_{a} - Midtones gamma per channel
+CGG_Highlights_Gamma_{r}_{g}_{b}_{a} - Highlights gamma per channel
+
+Gain (RGB only - no alpha):
+CGG_Global_Gain_{r}_{g}_{b} - Global gain per channel
+CGG_Shadows_Gain_{r}_{g}_{b} - Shadows gain per channel
+CGG_Midtones_Gain_{r}_{g}_{b} - Midtones gain per channel
+CGG_Highlights_Gain_{r}_{g}_{b} - Highlights gain per channel
+
+Offset (RGBA):
+CGG_Global_Offset_{r}_{g}_{b}_{a} - Global offset per channel
+CGG_Shadows_Offset_{r}_{g}_{b}_{a} - Shadows offset per channel
+CGG_Midtones_Offset_{r}_{g}_{b}_{a} - Midtones offset per channel
+CGG_Highlights_Offset_{r}_{g}_{b}_{a} - Highlights offset per channel
+
+Params:
+  r, g, b = float (hex color / 255) * intensity (range 0-2, Offset range -1 to 1)
+  a = float alpha (range 0-2, Offset range -1 to 1)
+  Gain has no alpha parameter

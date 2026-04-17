@@ -1,0 +1,4 @@
+SKC.{floatValue} - Sets skin tone color (maps slider 0-100 to float 0.04-1.30) - POST
+
+OFCD_Face_{url} - Applies a face texture from URL to the MetaHuman (sent twice as UE workaround) - POST
+OFCD_Body_{url} - Applies a body texture from URL to the MetaHuman (sent twice as UE workaround) - POST

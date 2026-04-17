@@ -1,0 +1,14 @@
+{
+  "api": "Background Image",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "BACK_{url}",
+        "description": "Set a background image on a spawned Live.Plane object",
+        "params": { "url": "string - Google Drive or public image URL" }
+      }
+    ],
+    "GET": []
+  }
+}

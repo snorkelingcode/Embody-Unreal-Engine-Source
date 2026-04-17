@@ -1,0 +1,4 @@
+Zach - MetaHuman 4 (Default Male)
+Voice ID: u38fdtX4yQwE9e1F0vPp
+Init: ElevenLabs={apiKey}=u38fdtX4yQwE9e1F0vPp
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

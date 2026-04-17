@@ -1,0 +1,84 @@
+{
+  "api": "Scene Lighting",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "DL_Int_{value}",
+        "description": "Directional light intensity (global sun/environment light)",
+        "params": { "value": "number - float 0 to 10, step 0.01" }
+      },
+      {
+        "command": "DL_Color_{r}_{g}_{b}",
+        "description": "Directional light color (global sun/environment light)",
+        "params": {
+          "r": "number - float 0 to 1",
+          "g": "number - float 0 to 1",
+          "b": "number - float 0 to 1"
+        }
+      },
+      {
+        "command": "LIGHTC_{tag}_{r}_{g}_{b}",
+        "description": "Set color of a spawned LIGHT.Volume object by its tag",
+        "params": {
+          "tag": "string - unique tag of the spawned LIGHT.Volume object",
+          "r": "number - float 0 to 1",
+          "g": "number - float 0 to 1",
+          "b": "number - float 0 to 1"
+        }
+      },
+      {
+        "command": "LIGHTI_{tag}_{value}",
+        "description": "Set intensity of a spawned LIGHT.Volume object by its tag",
+        "params": {
+          "tag": "string - unique tag of the spawned LIGHT.Volume object",
+          "value": "number - float 0 to 100, step 0.1"
+        }
+      }
+    ],
+    "GET": []
+  },
+  "presets": {
+    "description": "Static lighting presets for spawned LIGHT.Volume objects",
+    "presets": [
+      { "name": "Warm Glow", "color": { "r": 1, "g": 0.7, "b": 0.4 }, "intensity": 5 },
+      { "name": "Cool Blue", "color": { "r": 0.4, "g": 0.6, "b": 1 }, "intensity": 4 },
+      { "name": "Neon Pink", "color": { "r": 1, "g": 0.2, "b": 0.8 }, "intensity": 8 },
+      { "name": "Forest Green", "color": { "r": 0.2, "g": 0.8, "b": 0.3 }, "intensity": 3 },
+      { "name": "Sunset", "color": { "r": 1, "g": 0.5, "b": 0.2 }, "intensity": 6 },
+      { "name": "Moonlight", "color": { "r": 0.7, "g": 0.8, "b": 1 }, "intensity": 2 },
+      { "name": "Fire", "color": { "r": 1, "g": 0.3, "b": 0.1 }, "intensity": 10 },
+      { "name": "Purple Haze", "color": { "r": 0.6, "g": 0.2, "b": 1 }, "intensity": 5 }
+    ]
+  },
+  "animated_effects": {
+    "description": "Multi-light animated effects that spawn additional LIGHT.Volume objects and animate them at 20fps (setInterval 50ms). Each effect spawns N extra lights near the parent light and moves/recolors them per frame.",
+    "mechanism": {
+      "type": "setInterval",
+      "interval_ms": 50,
+      "commands_per_frame": "SPWNMOVE + LIGHTC + LIGHTI per spawned light, plus LIGHTC + LIGHTI for the parent light"
+    },
+    "effects": [
+      {
+        "name": "Fireflies",
+        "extra_lights": 5,
+        "description": "Multiple blinking yellow-green lights drifting randomly"
+      },
+      {
+        "name": "Spooky Ghosts",
+        "extra_lights": 3,
+        "description": "Slow eerie blue floating lights"
+      },
+      {
+        "name": "Rave Party",
+        "extra_lights": 4,
+        "description": "Fast-moving multi-color dance lights cycling through pink, green, blue, yellow"
+      },
+      {
+        "name": "Aurora Borealis",
+        "extra_lights": 6,
+        "description": "Sweeping green-blue curtain of northern lights"
+      }
+    ]
+  }
+}

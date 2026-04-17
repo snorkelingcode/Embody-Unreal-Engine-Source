@@ -1,0 +1,19 @@
+{
+  "api": "Color Temperature & Tint",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CG_Temp_{value}",
+        "description": "Color temperature in Kelvin",
+        "params": { "value": "number - integer 1500 to 15000" }
+      },
+      {
+        "command": "CG_Tint_{value}",
+        "description": "Color tint",
+        "params": { "value": "number - float -50 to 50, step 1" }
+      }
+    ],
+    "GET": []
+  }
+}

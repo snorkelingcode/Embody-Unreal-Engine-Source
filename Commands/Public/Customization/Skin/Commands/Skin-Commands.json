@@ -1,0 +1,30 @@
+{
+  "api": "Skin",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "SKC.{floatValue}",
+        "description": "Sets the MetaHuman skin tone color",
+        "params": {
+          "floatValue": "number - range 0.04 to 1.30, mapped from slider 0-100"
+        }
+      },
+      {
+        "command": "OFCD_Face_{url}",
+        "description": "Applies a face texture from URL to the MetaHuman. Sent twice as a workaround for UE not processing the first command.",
+        "params": {
+          "url": "string - texture image URL"
+        }
+      },
+      {
+        "command": "OFCD_Body_{url}",
+        "description": "Applies a body texture from URL to the MetaHuman. Sent twice as a workaround for UE not processing the first command.",
+        "params": {
+          "url": "string - texture image URL"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

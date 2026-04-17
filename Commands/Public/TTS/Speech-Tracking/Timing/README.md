@@ -1,0 +1,1 @@
+The Timing TTS API directory gets the duration of the remaining TTS.

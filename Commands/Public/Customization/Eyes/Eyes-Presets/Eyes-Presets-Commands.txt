@@ -1,0 +1,53 @@
+Each preset sends all EYE_ commands at once to batch-apply a full eye look. - POST
+
+Blue - Classic bright blue eyes
+  EYE_IrisColor1U_0.46, EYE_IrisColor1V_0.50
+  EYE_IrisBrightness_1.10, EYE_IrisSaturation_0.70, EYE_IrisSpecularity_0.45
+  EYE_LimbusDarkAmount_0.20, EYE_VeinsPower_0.37
+
+Green - Vivid emerald green eyes
+  EYE_IrisColor1U_0.35, EYE_IrisColor1V_0.40
+  EYE_IrisColor2U_0.30, EYE_IrisColor2V_0.50, EYE_IrisColorBalance_0.20
+  EYE_IrisBrightness_1.05, EYE_IrisSaturation_0.65
+
+Brown - Natural warm brown eyes
+  EYE_IrisColor1U_0.32, EYE_IrisColor1V_0.50
+  EYE_AOinIris_0.70, EYE_IrisBrightness_1.00, EYE_IrisSaturation_0.50
+
+Hazel - Light brown-green hazel eyes with dual color blend
+  EYE_IrisColor1U_0.35, EYE_IrisColor1V_0.45
+  EYE_IrisColor2U_0.40, EYE_IrisColor2V_0.55, EYE_IrisColorBalance_0.40
+  EYE_IrisColorBalanceSmoothness_0.60
+
+Amber - Warm golden amber eyes with high brightness
+  EYE_IrisColor1U_0.42, EYE_IrisColor1V_0.35
+  EYE_IrisBrightness_1.20, EYE_IrisSaturation_0.75, EYE_IrisSpecularity_0.50
+  EYE_LimbusDarkAmount_0.25
+
+Heterochromia - Two distinct iris colors blended together (blue/brown split)
+  EYE_IrisColor1U_0.80, EYE_IrisColor1V_0.30
+  EYE_IrisColor2U_0.50, EYE_IrisColor2V_0.30
+  EYE_IrisColorBalance_0.50, EYE_LimbusDarkAmount_0.50
+
+Cat Eye - Narrow slit pupil with high specularity and bright iris
+  EYE_PupilScale_0.70, EYE_IrisBrightness_1.30
+  EYE_IrisSpecularity_0.70, EYE_IrisRoughness_0.05, EYE_IrisSaturation_0.80
+  EYE_DistortStrength_0.15, EYE_ScaleIrisWithinMask_0.90
+
+Bloodshot - Heavily bloodshot sclera with tired, dilated pupils
+  EYE_VeinsPower_0.90, EYE_VeinsRotate_0.50
+  EYE_PupilScale_1.20, EYE_IrisBrightness_0.85, EYE_IrisSaturation_0.35
+  EYE_ScleraCornerDarkHardness_0.60, EYE_ScleraCornerDarkRadius_0.80, EYE_ScleraPower_1.20
+
+Crystal - Ultra-bright crystalline eyes with high specularity
+  EYE_IrisBrightness_1.50, EYE_IrisSpecularity_0.80, EYE_IrisRoughness_0.02
+  EYE_IrisSaturation_0.85, EYE_ScleraPower_1.30, EYE_ScleraSpecularity_0.65
+  EYE_PupilScale_0.90, EYE_VeinsPower_0.15
+
+Void - Near-black iris with minimal veins and dark sclera
+  EYE_IrisBrightness_0.50, EYE_IrisSaturation_0.10, EYE_IrisSpecularity_0.20
+  EYE_PupilScale_1.30, EYE_AOinIris_0.90
+  EYE_ScleraPower_0.70, EYE_VeinsPower_0.10
+
+Clear All - Resets all eye values to defaults
+  All EYE_ values set to 0.50

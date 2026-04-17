@@ -1,0 +1,1 @@
+This directory demonstrates how you can use the API to create animated makeup effects.

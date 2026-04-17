@@ -1,0 +1,27 @@
+Animated hair effects run at 30fps via setInterval, cycling HAIRF, HAIRC, and HCR/HCG/HCB commands over time.
+Same pattern as animated post processing on the Directors Cut page and animated makeup.
+Toggle on/off - only one animation active at a time.
+
+Aurora - Base hair color slowly cycles through the full spectrum - POST
+  Cycles HCR, HCG, HCB (RGB phase-shifted sin waves)
+  Duration: 8s loop
+
+Firelight - Warm flickering reds, oranges, and yellows like firelit hair - POST
+  Cycles HCR, HCG, HCB, HAIRC_HighlightshairDye, HAIRF_Highlights (random flicker bursts)
+  Duration: 3s loop
+
+Ocean Wave - Cool blue-teal gradients that flow through the hair via ombre - POST
+  Cycles HAIRC_OmbrehairDye, HAIRF_Ombre, HAIRF_OmbreIntensity (deep blue to teal oscillation)
+  Duration: 6s loop
+
+Disco - Rapid highlights color changes with high specular for a party effect - POST
+  Cycles HAIRC_HighlightshairDye, HAIRF_Highlights, HAIRF_Spec0, HAIRF_Spec1 (fast RGB cycling)
+  Duration: 4s loop
+
+Seasons - Slow transition through seasonal hair tones - POST
+  Cycles HCR, HCG, HCB, HAIRF_hairMelanin, HAIRF_hairRedness (spring green, summer gold, autumn red, winter white)
+  Duration: 12s loop
+
+Pulse - Hair specular and opacity pulse rhythmically for a breathing light effect - POST
+  Cycles HAIRF_Spec0, HAIRF_Spec1, HAIRF_OpacityNear, HAIRF_OpacityFar (synced sine wave)
+  Duration: 3s loop

@@ -1,0 +1,108 @@
+{
+  "api": "Animated Camera",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Time-based animated camera movements. Frontend runs a 30fps setInterval loop that sends CAMSHOT and CAMSTREAM commands with values computed from math functions. Same architecture as animated post processing on the Directors Cut page.",
+  "mechanism": {
+    "frameRate": "30fps (setInterval at 1000/30ms)",
+    "toggle": "Click to start, click again to stop. Only one animation active at a time.",
+    "persistence": "Animation survives page navigation via module-level refs"
+  },
+  "animations": [
+    {
+      "id": "shake",
+      "name": "Shake",
+      "description": "Handheld camera shake effect with randomized position/rotation offsets",
+      "duration": 999,
+      "commands": ["CAMSHOT.Medium", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Medium once, then applies random X/Y/Z offsets (-3 to 3) and pitch/yaw offsets (-2 to 2) every frame"
+    },
+    {
+      "id": "wave",
+      "name": "Wave",
+      "description": "Smooth up and down bobbing motion",
+      "duration": 7,
+      "commands": ["CAMSHOT.Medium", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Medium once, then sin(t) drives Y offset 0-30 with slight pitch offset"
+    },
+    {
+      "id": "dutch-tilt",
+      "name": "Dutch Tilt",
+      "description": "Rocking roll rotation for dramatic effect",
+      "duration": 5,
+      "commands": ["CAMSHOT.Medium", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Medium once, then sin(t) drives roll offset -15 to 15 degrees"
+    },
+    {
+      "id": "high-low-sweep",
+      "name": "High/Low Sweep",
+      "description": "Alternates between high angle and low angle shots",
+      "duration": 8,
+      "commands": ["CAMSHOT.HighAngle", "CAMSHOT.LowAngle"],
+      "update": "Switches between CAMSHOT.HighAngle and CAMSHOT.LowAngle at midpoint of each cycle"
+    },
+    {
+      "id": "angle-cycle",
+      "name": "Angle Cycle",
+      "description": "Cycles through high, default, and low angles",
+      "duration": 16,
+      "commands": ["CAMSHOT.HighAngle", "CAMSHOT.Default", "CAMSHOT.LowAngle"],
+      "update": "4-phase cycle: HighAngle -> Default -> LowAngle -> Default, 4s each"
+    },
+    {
+      "id": "distance-cycle",
+      "name": "Distance Cycle",
+      "description": "Cycles through close, medium, and wide shots",
+      "duration": 15,
+      "commands": ["CAMSHOT.Close", "CAMSHOT.Medium", "CAMSHOT.WideShot"],
+      "update": "3-phase cycle: Close -> Medium -> WideShot, 5s each"
+    },
+    {
+      "id": "dolly-zoom",
+      "name": "Dolly Zoom",
+      "description": "Smooth push-in and pull-out along the Z axis",
+      "duration": 6,
+      "commands": ["CAMSHOT.Medium", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Medium once, then sin(t) drives Z offset for push-in/pull-out motion"
+    },
+    {
+      "id": "breathing",
+      "name": "Breathing",
+      "description": "Subtle breathing motion with gentle Z-axis movement",
+      "duration": 4,
+      "commands": ["CAMSHOT.Close", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Close once, then gentle sin(t) drives small Z offset for breathing feel"
+    },
+    {
+      "id": "rising-shot",
+      "name": "Rising Shot",
+      "description": "Ascending reveal with pitch adjustment",
+      "duration": 10,
+      "commands": ["CAMSHOT.LowAngle", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.LowAngle once, then linear Y ramp upward with pitch adjustment to keep subject framed"
+    },
+    {
+      "id": "descending-shot",
+      "name": "Descending Shot",
+      "description": "Dramatic descent with pitch adjustment",
+      "duration": 10,
+      "commands": ["CAMSHOT.HighAngle", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.HighAngle once, then linear Y ramp downward with pitch adjustment"
+    },
+    {
+      "id": "zoom-reveal",
+      "name": "Zoom Reveal",
+      "description": "Pull back from extreme close to wide shot reveal",
+      "duration": 12,
+      "commands": ["CAMSHOT.ExtremeClose", "CAMSHOT.Close", "CAMSHOT.WideShot"],
+      "update": "3-phase: ExtremeClose (4s) -> Close (4s) -> WideShot (4s) for dramatic reveal"
+    },
+    {
+      "id": "dramatic-push",
+      "name": "Dramatic Push",
+      "description": "Intense forward push toward subject",
+      "duration": 3,
+      "commands": ["CAMSHOT.Medium", "CAMSTREAM"],
+      "update": "Sets CAMSHOT.Medium once, then rapid linear Y/Z ramp for aggressive push-in"
+    }
+  ]
+}

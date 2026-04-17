@@ -1,0 +1,9 @@
+Lens Exposure - POST
+CGG_LenseExpo_HighlightContrast_{value} - Lens exposure highlight contrast (0-2, step 0.01)
+CGG_LenseExpo_ShadowContrast_{value} - Lens exposure shadow contrast (0-2, step 0.01)
+CGG_LenseExpo_HighlightThreshold_{value} - Lens exposure highlight threshold (0-2, step 0.01)
+CGG_LenseExpo_ShadowThreshold_{value} - Lens exposure shadow threshold (0-2, step 0.01)
+CGG_LenseExpo_DetailStrength_{value} - Lens exposure detail strength (0-1, step 0.01)
+CGG_LenseExpo_BlurredLumiBlend_{value} - Lens exposure blurred luminance blend (0-1, step 0.01)
+CGG_LenseExpo_KernalSize_{value} - Lens exposure kernel size (0-10, step 1)
+CGG_LenseExpo_GreyBias_{value} - Lens exposure grey bias (0-1, step 0.01)

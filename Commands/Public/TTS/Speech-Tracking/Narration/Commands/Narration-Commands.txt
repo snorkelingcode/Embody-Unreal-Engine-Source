@@ -1,0 +1,1 @@
+NAR_{On/Off} will enable/disable lip sync creating a narrator effect.

@@ -1,0 +1,22 @@
+TTS_Kokoro_{voice}_{emotion}_{intensity}_{text} - Sends text to UE for local Kokoro TTS with MetaHuman lip-sync - POST
+Voices: Bella, Heart, Onyx, Eric
+Emotions: Neutral, Happy, Sad, Disgust, Anger, Surprise, Fear, Confident, Excited, Bored, Playful, Confused
+Intensity: 0.0-1.0 (default: 0.7)
+
+Example: TTS_Kokoro_Bella_Happy_0.7_Hello World
+
+Text is sanitized before sending:
+- Newlines replaced with spaces
+- Underscores replaced with spaces
+- Special characters stripped (only word chars, spaces, and basic punctuation kept)
+
+Chunking:
+- Long scripts are split into chunks
+- Each chunk is sent as a separate TTS command
+- Frontend waits for TTS_Complete before sending the next chunk
+- Chunks are processed sequentially with 100ms delay between
+
+UE responds with:
+TTS_Started - Avatar began speaking - GET
+TTS_Complete - Avatar finished speaking (triggers next chunk if queued) - GET
+{duration} - Float representing audio duration in seconds (fallback timing) - GET

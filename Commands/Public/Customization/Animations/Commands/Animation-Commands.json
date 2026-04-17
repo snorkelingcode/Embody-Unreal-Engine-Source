@@ -1,0 +1,92 @@
+{
+  "api": "Character Animations",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Controls MetaHuman body animations. Sets idle loops and speaking gestures at runtime. Animations are grouped into Idle (looping poses) and Speaking (gesture overlays during TTS).",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "{animationId}",
+        "description": "Play a body animation on the active MetaHuman. The animation ID is sent directly as the command.",
+        "params": {
+          "animationId": "string - animation identifier from the catalog below"
+        }
+      }
+    ],
+    "GET": []
+  },
+  "animations": {
+    "idle": {
+      "description": "Looping idle animations — character plays these continuously when not speaking",
+      "items": [
+        { "id": "CONVO_Speaking", "label": "Default" },
+        { "id": "CONVO_Despair", "label": "Despair" },
+        { "id": "CONVO_Dance", "label": "Dance" },
+        { "id": "CONVO_Dance2", "label": "Dance 2" },
+        { "id": "CONVO_StandingLaughIdle", "label": "Laugh Idle" },
+        { "id": "CONVO_StandingLaughIdle2", "label": "Laugh Idle 2" },
+        { "id": "CONVO_StandingLaughIdle3", "label": "Laugh Idle 3" },
+        { "id": "CONVO_FuriousIdle", "label": "Furious Idle" },
+        { "id": "CONVO_FuriousIdle2", "label": "Furious Idle 2" },
+        { "id": "CONVO_SadIdle", "label": "Sad Idle" },
+        { "id": "CONVO_SadIdle2", "label": "Sad Idle 2" },
+        { "id": "CONVO_SeriousIdle", "label": "Serious Idle" },
+        { "id": "CONVO_SeriousIdle2", "label": "Serious Idle 2" },
+        { "id": "CONVO_ListeningIdle", "label": "Listening Idle" },
+        { "id": "CONVO_ListeningIdle2", "label": "Listening Idle 2" },
+        { "id": "CONVO_ListeningIdle3", "label": "Listening Idle 3" },
+        { "id": "CONVO_LeaningBar", "label": "Leaning Bar" },
+        { "id": "CONVO_LeaningBar2", "label": "Leaning Bar 2" },
+        { "id": "CONVO_LegUp", "label": "Leg Up" },
+        { "id": "CONVO_BackAgainstWall", "label": "Back Against Wall" },
+        { "id": "CONVO_BackLegLean", "label": "Back Leg Lean" },
+        { "id": "CONVO_ActionBenchCenter", "label": "Bench Center" },
+        { "id": "CONVO_BenchLoop", "label": "Bench Loop" },
+        { "id": "CONVO_BenchLoop2", "label": "Bench Loop 2" },
+        { "id": "CONVO_ActionBenchRight", "label": "Bench Right" },
+        { "id": "CONVO_ActionBenchRight2", "label": "Bench Right 2" },
+        { "id": "CONVO_ActionBenchLeft", "label": "Bench Left" },
+        { "id": "CONVO_ActionBenchLeft2", "label": "Bench Left 2" },
+        { "id": "CONVO_RMMoveSad", "label": "RM Move Sad" },
+        { "id": "CONVO_RMMoveFurious", "label": "RM Move Furious" },
+        { "id": "CONVO_RMMoveSerious", "label": "RM Move Serious" },
+        { "id": "CONVO_RMLeanRight", "label": "RM Lean Right" },
+        { "id": "CONVO_RMLeanLeft", "label": "RM Lean Left" },
+        { "id": "CONVO_HangingLoop", "label": "Hanging Loop" },
+        { "id": "CONVO_InjuredWalk", "label": "Injured Walk" }
+      ]
+    },
+    "speaking": {
+      "description": "Speaking gesture animations — play during TTS to add body language",
+      "items": [
+        { "id": "CONVO_FuriousSpeaking", "label": "Furious Speaking" },
+        { "id": "CONVO_SadTalk", "label": "Sad Talk" },
+        { "id": "CONVO_SadTalk2", "label": "Sad Talk 2" },
+        { "id": "CONVO_startspeaking", "label": "Start Speaking" },
+        { "id": "CONVO_SeriousTalk", "label": "Serious Talk" },
+        { "id": "CONVO_SeriousTalk2", "label": "Serious Talk 2" },
+        { "id": "CONVO_SeriousTalk3", "label": "Serious Talk 3" },
+        { "id": "CONVO_SeriousTalk4", "label": "Serious Talk 4" },
+        { "id": "CONVO_SeriousTalk5", "label": "Serious Talk 5" },
+        { "id": "CONVO_SeriousTalk6", "label": "Serious Talk 6" },
+        { "id": "CONVO_WhisperLeft", "label": "Whisper Left" },
+        { "id": "CONVO_WhisperLeft2", "label": "Whisper Left 2" },
+        { "id": "CONVO_WhisperRight", "label": "Whisper Right" },
+        { "id": "CONVO_WhisperRight2", "label": "Whisper Right 2" },
+        { "id": "CONVO_StandingLaugh", "label": "Standing Laugh" },
+        { "id": "CONVO_StandingLaugh2", "label": "Standing Laugh 2" },
+        { "id": "CONVO_StandingLaugh3", "label": "Standing Laugh 3" },
+        { "id": "CONVO_StandingLaughGesture", "label": "Laugh Gesture" },
+        { "id": "CONVO_SadGesture", "label": "Sad Gesture" },
+        { "id": "CONVO_SeriousGesture", "label": "Serious Gesture" },
+        { "id": "CONVO_SeriousGesture2", "label": "Serious Gesture 2" },
+        { "id": "CONVO_SeriousGesture3", "label": "Serious Gesture 3" },
+        { "id": "CONVO_RMSadGesture", "label": "RM Sad Gesture" },
+        { "id": "CONVO_RMLaughTalk", "label": "RM Laugh Talk" },
+        { "id": "CONVO_RMLaughTalk2", "label": "RM Laugh Talk 2" },
+        { "id": "CONVO_RMLaughGesture", "label": "RM Laugh Gesture" },
+        { "id": "CONVO_RMLaughGesture2", "label": "RM Laugh Gesture 2" },
+        { "id": "CONVO_RMSeriousTalk", "label": "RM Serious Talk" }
+      ]
+    }
+  }
+}

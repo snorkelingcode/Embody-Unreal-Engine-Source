@@ -1,0 +1,4 @@
+Eva Robotic - Robotic Feminine
+Voice ID: weA4Q36twV5kwSaTEL0Q
+Init: ElevenLabs={apiKey}=weA4Q36twV5kwSaTEL0Q
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

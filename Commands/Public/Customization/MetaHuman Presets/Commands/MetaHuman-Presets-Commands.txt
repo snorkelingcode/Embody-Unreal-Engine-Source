@@ -1,0 +1,21 @@
+When a character preset is selected, the following commands are sent in sequence:
+
+1. Character body preset command - POST
+PRS.Fem - Switches to Lucy (female body)
+PRS.Fem1 - Switches to Sarah (female body alt)
+PRS.Masc1 - Switches to Harry (male body)
+PRS.Masc - Switches to Zach (male body alt)
+
+2. Hairstyle command - POST
+HS_Lucy.Updo - Lucy default hairstyle
+HS_Sarah.LongStraight - Sarah default hairstyle
+HS_Harry.TwistedBraids - Harry default hairstyle
+HS_Zach.MessyShort - Zach default hairstyle
+
+3. Outfit commands (torso, legs, feet) - POST
+Lucy: Tops_Lucy.TurtleNeckSweater, Bottoms_Lucy.Skirt, Shoes_Lucy.Sneakers
+Sarah: Tops_Sarah.SleevelessDress, (no legs), Shoes_Sarah.Sneakers
+Harry: Tops_Harry.TShirt, Bottoms_Harry.CargoPants, Shoes_Harry.Sneakers
+Zach: Tops_Zach.TripleLayerVest, Bottoms_Zach.Shorts, Shoes_Zach.Sneakers
+
+4. PLAYER_{metahumanTag} - Sent 500ms after preset to set up PlayerController - POST

@@ -1,0 +1,37 @@
+Each preset sends OF_ commands for all 5 slots at once. Replace {Char} with the active MetaHuman (Lucy, Sarah, Harry, Zach). - POST
+
+Business Casual - Professional sweater, skirt, and heels (Lucy, Sarah only)
+  OF_Tops_{Char}.TurtleNeckSweater, OF_Bottoms_{Char}.Skirt, OF_Shoes_{Char}.Heels
+  Skin: OFC_Bottoms_Skirt.NavyLint
+
+Streetwear - Casual tee with cargo pants and sneakers (All characters)
+  OF_Tops_{Char}.TShirt, OF_Bottoms_{Char}.CargoPant, OF_Shoes_{Char}.Sneakers
+  Skin: OFC_Tops_TShirt.NavyWhiteStripe
+
+Athletic - Sporty vest with shorts and sneakers (All characters)
+  OF_Tops_{Char}.TripleLayerVest, OF_Bottoms_{Char}.Shorts, OF_Shoes_{Char}.Sneakers
+
+Summer Dress - Light sleeveless dress with sneakers (Lucy, Sarah only)
+  OF_Tops_{Char}.SleevelessDress, OF_Bottoms_None, OF_Shoes_{Char}.Sneakers
+  Skin: OFC_Tops_SleevelessDress.SalmonCotton
+
+Night Out - Elegant dress with heels and wings (Lucy, Sarah only)
+  OF_Tops_{Char}.SleevelessDress, OF_Bottoms_None, OF_Shoes_{Char}.Heels, OF_Magic_Wings
+  Skin: OFC_Tops_SleevelessDress.Phoenix
+
+Tactical - Camo cargo pants with plain tee (All characters)
+  OF_Tops_{Char}.TShirt, OF_Bottoms_{Char}.CargoPant, OF_Shoes_{Char}.Sneakers
+  Skin: OFC_Bottoms_CargoPant.FullCamo
+
+Cyberpunk - Carbon fiber dress with wings (Lucy, Sarah only)
+  OF_Tops_{Char}.SleevelessDress, OF_Bottoms_None, OF_Shoes_{Char}.Heels, OF_Magic_Wings
+  Skin: OFC_Tops_SleevelessDress.CarbonFiber
+
+Pumpkin Witch - Halloween costume with wings (Lucy only)
+  OF_Tops_Lucy.PumpkinWitch, OF_Bottoms_None, OF_Shoes_Lucy.Heels, OF_Magic_Wings
+
+Minimal - Just sneakers, no clothing (All characters)
+  OF_Tops_Top_None, OF_Bottoms_None, OF_Shoes_{Char}.Sneakers
+
+Clear All - Removes all clothing
+  All slots set to None

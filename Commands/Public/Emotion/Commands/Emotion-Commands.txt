@@ -1,0 +1,21 @@
+EMOTION_{Emotion}_{Strength}_{Blend}_{BlendMode} - Sets MetaHuman face emotion and animation blend - POST
+Format: EMOTION_{Emotion}_{Strength}_{Blend}_{BlendMode}
+
+Params:
+  Emotion    - Emotion name (Neutral, Happy, Sad, Surprised, Fearful, Focused, Disgusted,
+               Childish, Tired, Annoyed, Confused, Curious, Embarrassed, Angry, Bored,
+               Excited, Relaxed, Suspicious, Proud, Pained, Nervous, Love)
+  Strength   - FaceEmotionStrength 0.0-1.0 (intensity of the emotion)
+  Blend      - FaceAnimationBlend 0.0-1.0 (mix between default slot and ZenBlink animation)
+  BlendMode  - Override (replaces face animation) or BlendByWeight (layers on top)
+
+Defaults: Neutral, 0.8, 0.77, BlendByWeight
+
+Examples:
+  EMOTION_Happy_0.8_0.77_BlendByWeight
+  EMOTION_Sad_0.5_0.6_Override
+  EMOTION_Angry_1.0_0.9_Override
+  EMOTION_Love_0.7_0.8_BlendByWeight
+
+Use BlendByWeight when lip-sync is active to layer emotion on top of speech.
+Use Override when the avatar is not speaking for full emotion control.

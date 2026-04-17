@@ -1,0 +1,1 @@
+This directory is for the general makeup commands. Combine the RGBs to make linear colors.

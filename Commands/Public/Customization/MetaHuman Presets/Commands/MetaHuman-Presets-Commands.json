@@ -1,0 +1,67 @@
+{
+  "api": "MetaHuman Presets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Selecting a character preset sends a sequence of commands: body preset, hairstyle, and outfit (torso/legs/feet)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "PRS.{presetId}",
+        "description": "Switches the MetaHuman body preset in UE",
+        "variants": {
+          "PRS.Fem": "Lucy (female body)",
+          "PRS.Fem1": "Sarah (female body alt)",
+          "PRS.Masc1": "Harry (male body)",
+          "PRS.Masc": "Zach (male body alt)"
+        }
+      },
+      {
+        "command": "HS_{character}.{style}",
+        "description": "Sets the default hairstyle for the selected character",
+        "variants": {
+          "HS_Lucy.Updo": "Lucy default",
+          "HS_Sarah.LongStraight": "Sarah default",
+          "HS_Harry.TwistedBraids": "Harry default",
+          "HS_Zach.MessyShort": "Zach default"
+        }
+      },
+      {
+        "command": "Tops_{character}.{item}",
+        "description": "Sets the torso outfit piece",
+        "variants": {
+          "Tops_Lucy.TurtleNeckSweater": "Lucy default",
+          "Tops_Sarah.SleevelessDress": "Sarah default",
+          "Tops_Harry.TShirt": "Harry default",
+          "Tops_Zach.TripleLayerVest": "Zach default"
+        }
+      },
+      {
+        "command": "Bottoms_{character}.{item}",
+        "description": "Sets the legs outfit piece (not sent if empty)",
+        "variants": {
+          "Bottoms_Lucy.Skirt": "Lucy default",
+          "Bottoms_Harry.CargoPants": "Harry default",
+          "Bottoms_Zach.Shorts": "Zach default"
+        },
+        "note": "Sarah has no bottoms command (dress is one piece)"
+      },
+      {
+        "command": "Shoes_{character}.{item}",
+        "description": "Sets the footwear",
+        "variants": {
+          "Shoes_Lucy.Sneakers": "Lucy default",
+          "Shoes_Sarah.Sneakers": "Sarah default",
+          "Shoes_Harry.Sneakers": "Harry default",
+          "Shoes_Zach.Sneakers": "Zach default"
+        }
+      }
+    ],
+    "GET": []
+  },
+  "commandSequence": {
+    "1": "PRS.{preset} - body swap",
+    "2": "HS_{character}.{style} - hairstyle",
+    "3": "Tops_{character}.{item} - torso",
+    "4": "Bottoms_{character}.{item} - legs (if applicable)",
+    "5": "Shoes_{character}.{item} - feet"
+  }
+}

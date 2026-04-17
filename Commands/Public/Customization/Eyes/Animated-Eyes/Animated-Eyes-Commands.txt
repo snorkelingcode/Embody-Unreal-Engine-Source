@@ -1,0 +1,27 @@
+Animated eye effects run at 30fps via setInterval, cycling EYE_ commands over time.
+Same pattern as animated post processing on the Directors Cut page, animated makeup, and animated hair.
+Toggle on/off - only one animation active at a time.
+
+Dilate - Pupil oscillates between constricted and dilated, simulating light adaptation - POST
+  Cycles EYE_PupilScale (0.70 constricted to 1.30 dilated)
+  Duration: 4s loop
+
+Hypnotic - Iris color UV coordinates slowly rotate through the color lookup texture - POST
+  Cycles EYE_IrisColor1U, EYE_IrisColor1V, EYE_IrisColor2U, EYE_IrisColor2V (circular UV path)
+  Duration: 10s loop
+
+Glint - Iris brightness and specularity pulse for a sparkling, alive look - POST
+  Cycles EYE_IrisBrightness, EYE_IrisSpecularity, EYE_ScleraSpecularity (sine wave pulse)
+  Duration: 3s loop
+
+Blood Flow - Vein power and sclera tint fluctuate to simulate pulsing blood vessels - POST
+  Cycles EYE_VeinsPower, EYE_ScleraTintU, EYE_ScleraTintV, EYE_ScleraCornerDarkRadius (reddening pulse)
+  Duration: 5s loop
+
+Morph - Iris distortion parameters oscillate for a warping, otherworldly effect - POST
+  Cycles EYE_DistortStrength, EYE_DistortScale, EYE_DistortPanX, EYE_DistortPanY (circular drift)
+  Duration: 6s loop
+
+Stare - Slow pupil dilation with increasing sclera darkness for an intense gaze - POST
+  Cycles EYE_PupilScale, EYE_ScleraCornerDarkHardness, EYE_ScleraCornerDarkRadius, EYE_IrisBrightness (ramp and snap)
+  Duration: 8s loop

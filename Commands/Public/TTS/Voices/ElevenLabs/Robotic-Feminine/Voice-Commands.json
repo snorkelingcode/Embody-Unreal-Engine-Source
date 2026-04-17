@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Eva Robotic",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Eva Robotic",
+    "id": "eva",
+    "voiceId": "weA4Q36twV5kwSaTEL0Q",
+    "character": "Robotic Feminine",
+    "isDefault": false
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=weA4Q36twV5kwSaTEL0Q",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

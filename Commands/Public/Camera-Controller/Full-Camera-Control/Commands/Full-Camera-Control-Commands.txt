@@ -1,0 +1,21 @@
+Full 6-axis camera control (CAMSTREAM) - POST
+CAMSTREAM_{x}_{y}_{z}_{pitch}_{yaw}_{roll} - Sets camera position and rotation simultaneously
+
+Position:
+  x - Horizontal position (-500 to 500)
+  y - Vertical position (-500 to 500)
+  z - Depth/forward position (-500 to 500)
+
+Rotation:
+  pitch - Up/down rotation (-180 to 180 degrees)
+  yaw - Left/right rotation (-180 to 180 degrees)
+  roll - Tilt rotation (-180 to 180 degrees)
+
+Default: CAMSTREAM_0_0_0_0_0_0
+
+Position values are offsets from the current CAMSHOT preset. Set a CAMSHOT first, then use CAMSTREAM to fine-tune.
+
+Examples:
+  CAMSTREAM_0_50_0_-15_0_0 (raised camera looking slightly down)
+  CAMSTREAM_100_0_-200_0_45_0 (offset right, pulled back, rotated 45 degrees)
+  CAMSTREAM_0_0_0_0_0_15 (dutch tilt at 15 degrees)

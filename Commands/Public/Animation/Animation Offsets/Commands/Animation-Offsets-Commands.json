@@ -1,0 +1,79 @@
+{
+  "api": "Animation Offsets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Procedural bone rotation offsets for the UE5 Mannequin. Each command sets the additive rotation (Pitch, Yaw, Roll) on a named bone in real time. Used by Embody Animation Offset Studio to drive poses, animations, and AI-generated motion.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "MAN_{bone}_{pitch}_{yaw}_{roll}",
+        "description": "Sets a procedural rotation offset on the named bone. All three rotation axes are sent together. Values are floating-point degrees.",
+        "params": {
+          "bone": "string - UE5 Mannequin bone name (see Supported Bones below)",
+          "pitch": "number - rotation around X axis, degrees (-180 to 180)",
+          "yaw": "number - rotation around Y axis, degrees (-180 to 180)",
+          "roll": "number - rotation around Z axis, degrees (-180 to 180)"
+        },
+        "defaults": {
+          "pitch": 0,
+          "yaw": 0,
+          "roll": 0
+        },
+        "examples": [
+          "MAN_head_-15.0_20.0_0.0",
+          "MAN_spine_02_10.0_0.0_5.0",
+          "MAN_upperarm_l_0.0_45.0_0.0",
+          "MAN_lowerarm_r_0.0_0.0_30.0",
+          "MAN_neck_01_-8.0_0.0_0.0"
+        ],
+        "notes": "Values are additive offsets layered on top of the character's current animation. Multi-part bone names (e.g. lowerarm_l) are supported — the parser joins all parts before the last three tokens as the bone name."
+      },
+      {
+        "command": "MAN_RESET",
+        "description": "Resets all bone rotation offsets to zero simultaneously.",
+        "params": {},
+        "defaults": {},
+        "examples": [
+          "MAN_RESET"
+        ],
+        "notes": "Clears every bone offset in a single command. Used when switching poses or stopping playback."
+      }
+    ],
+    "GET": []
+  },
+  "supported_bones": {
+    "spine": [
+      "pelvis",
+      "spine_01", "spine_02", "spine_03", "spine_04", "spine_05"
+    ],
+    "neck_head": [
+      "neck_01", "neck_02",
+      "head"
+    ],
+    "left_arm": [
+      "clavicle_l", "upperarm_l", "lowerarm_l", "hand_l"
+    ],
+    "right_arm": [
+      "clavicle_r", "upperarm_r", "lowerarm_r", "hand_r"
+    ],
+    "left_hand": [
+      "thumb_01_l", "thumb_02_l", "thumb_03_l",
+      "index_01_l", "index_02_l", "index_03_l",
+      "middle_01_l", "middle_02_l", "middle_03_l",
+      "ring_01_l", "ring_02_l", "ring_03_l",
+      "pinky_01_l", "pinky_02_l", "pinky_03_l"
+    ],
+    "right_hand": [
+      "thumb_01_r", "thumb_02_r", "thumb_03_r",
+      "index_01_r", "index_02_r", "index_03_r",
+      "middle_01_r", "middle_02_r", "middle_03_r",
+      "ring_01_r", "ring_02_r", "ring_03_r",
+      "pinky_01_r", "pinky_02_r", "pinky_03_r"
+    ],
+    "left_leg": [
+      "thigh_l", "calf_l", "foot_l", "ball_l"
+    ],
+    "right_leg": [
+      "thigh_r", "calf_r", "foot_r", "ball_r"
+    ]
+  }
+}

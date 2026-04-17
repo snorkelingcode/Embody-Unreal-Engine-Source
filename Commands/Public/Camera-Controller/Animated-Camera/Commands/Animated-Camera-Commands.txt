@@ -1,0 +1,51 @@
+Animated camera movements run at 30fps via setInterval, cycling CAMSHOT and CAMSTREAM commands over time.
+Same pattern as animated post processing on the Directors Cut page.
+Toggle on/off - only one animation active at a time.
+
+Shake - Handheld camera shake with randomized offsets - POST
+  Uses CAMSHOT.Medium + CAMSTREAM (random X/Y/Z and pitch/yaw offsets)
+  Duration: continuous
+
+Wave - Smooth up and down bobbing motion - POST
+  Uses CAMSHOT.Medium + CAMSTREAM (sin wave Y offset)
+  Duration: 7s loop
+
+Dutch Tilt - Rocking roll rotation for dramatic effect - POST
+  Uses CAMSHOT.Medium + CAMSTREAM (sin wave roll offset -15 to 15)
+  Duration: 5s loop
+
+High/Low Sweep - Alternates between high and low angle shots - POST
+  Switches CAMSHOT.HighAngle and CAMSHOT.LowAngle
+  Duration: 8s loop
+
+Angle Cycle - Cycles through high, default, and low angles - POST
+  Cycles CAMSHOT.HighAngle -> Default -> LowAngle -> Default (4s each)
+  Duration: 16s loop
+
+Distance Cycle - Cycles through close, medium, and wide shots - POST
+  Cycles CAMSHOT.Close -> Medium -> WideShot (5s each)
+  Duration: 15s loop
+
+Dolly Zoom - Smooth push-in and pull-out along Z axis - POST
+  Uses CAMSHOT.Medium + CAMSTREAM (sin wave Z offset)
+  Duration: 6s loop
+
+Breathing - Subtle breathing motion with gentle Z movement - POST
+  Uses CAMSHOT.Close + CAMSTREAM (gentle sin wave Z offset)
+  Duration: 4s loop
+
+Rising Shot - Ascending reveal with pitch adjustment - POST
+  Uses CAMSHOT.LowAngle + CAMSTREAM (linear Y ramp up with pitch)
+  Duration: 10s loop
+
+Descending Shot - Dramatic descent with pitch adjustment - POST
+  Uses CAMSHOT.HighAngle + CAMSTREAM (linear Y ramp down with pitch)
+  Duration: 10s loop
+
+Zoom Reveal - Pull back from extreme close to wide shot - POST
+  Cycles CAMSHOT.ExtremeClose -> Close -> WideShot (4s each)
+  Duration: 12s loop
+
+Dramatic Push - Intense forward push toward subject - POST
+  Uses CAMSHOT.Medium + CAMSTREAM (rapid Y/Z ramp)
+  Duration: 3s loop

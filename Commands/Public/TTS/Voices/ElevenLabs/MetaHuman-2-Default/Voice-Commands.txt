@@ -1,0 +1,4 @@
+Mai - MetaHuman 2 (Default Female)
+Voice ID: WtA85syCrJwasGeHGH2p
+Init: ElevenLabs={apiKey}=WtA85syCrJwasGeHGH2p
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

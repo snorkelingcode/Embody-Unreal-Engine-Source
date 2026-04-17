@@ -1,0 +1,71 @@
+{
+  "api": "Color Grading",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Color grading controls across 4 levels (Global, Shadows, Midtones, Highlights) with 5 properties each (Saturation, Contrast, Gamma, Gain, Offset). Values are sent as RGB or RGBA channels computed from a color picker and intensity slider.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CGG_{level}_Saturation_{r}_{g}_{b}_{a}",
+        "description": "Color saturation per channel with alpha",
+        "params": {
+          "level": "string - one of: Global, Shadows, Midtones, Highlights",
+          "r": "number - float (color.r * intensity), range 0 to 2",
+          "g": "number - float (color.g * intensity), range 0 to 2",
+          "b": "number - float (color.b * intensity), range 0 to 2",
+          "a": "number - float alpha, range 0 to 2"
+        }
+      },
+      {
+        "command": "CGG_{level}_Contrast_{r}_{g}_{b}_{a}",
+        "description": "Color contrast per channel with alpha",
+        "params": {
+          "level": "string - one of: Global, Shadows, Midtones, Highlights",
+          "r": "number - float (color.r * intensity), range 0 to 2",
+          "g": "number - float (color.g * intensity), range 0 to 2",
+          "b": "number - float (color.b * intensity), range 0 to 2",
+          "a": "number - float alpha, range 0 to 2"
+        }
+      },
+      {
+        "command": "CGG_{level}_Gamma_{r}_{g}_{b}_{a}",
+        "description": "Color gamma per channel with alpha",
+        "params": {
+          "level": "string - one of: Global, Shadows, Midtones, Highlights",
+          "r": "number - float (color.r * intensity), range 0 to 2",
+          "g": "number - float (color.g * intensity), range 0 to 2",
+          "b": "number - float (color.b * intensity), range 0 to 2",
+          "a": "number - float alpha, range 0 to 2"
+        }
+      },
+      {
+        "command": "CGG_{level}_Gain_{r}_{g}_{b}",
+        "description": "Color gain per channel (no alpha)",
+        "params": {
+          "level": "string - one of: Global, Shadows, Midtones, Highlights",
+          "r": "number - float (color.r * intensity), range 0 to 2",
+          "g": "number - float (color.g * intensity), range 0 to 2",
+          "b": "number - float (color.b * intensity), range 0 to 2"
+        }
+      },
+      {
+        "command": "CGG_{level}_Offset_{r}_{g}_{b}_{a}",
+        "description": "Color offset per channel with alpha",
+        "params": {
+          "level": "string - one of: Global, Shadows, Midtones, Highlights",
+          "r": "number - float (color.r * intensity), range -1 to 1",
+          "g": "number - float (color.g * intensity), range -1 to 1",
+          "b": "number - float (color.b * intensity), range -1 to 1",
+          "a": "number - float alpha, range -1 to 1"
+        }
+      }
+    ],
+    "GET": []
+  },
+  "notes": {
+    "levels": ["Global", "Shadows", "Midtones", "Highlights"],
+    "properties": ["Saturation", "Contrast", "Gamma", "Gain", "Offset"],
+    "total_commands": "20 unique command patterns (4 levels x 5 properties)",
+    "gain_format": "Gain uses RGB only (3 values), all others use RGBA (4 values)",
+    "value_computation": "Final RGB values = (hex color component / 255) * intensity slider value"
+  }
+}

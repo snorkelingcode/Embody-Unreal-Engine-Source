@@ -1,0 +1,187 @@
+{
+  "api": "Hair Presets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Each preset batch-sends all HAIRF + HAIRC + HCR/HCG/HCB commands to apply a full hair look at once",
+  "presets": {
+    "brunette": {
+      "name": "Brunette",
+      "description": "Natural brown hair",
+      "commands": {
+        "HCR": 0.40, "HCG": 0.30, "HCB": 0.20,
+        "HAIRF_hairMelanin": 0.70, "HAIRF_hairRedness": 0.20, "HAIRF_HairRoughness": 0.60, "HAIRF_Desat": 0.10,
+        "HAIRF_Highlights": 0.20, "HAIRF_HighlightsBlending": 0.60, "HAIRF_HighlightsIntensity": 0.40,
+        "HAIRF_HighlightsMelanin": 0.40, "HAIRF_HighlightsRedness": 0.40,
+        "HAIRC_HighlightshairDye": [0.70, 0.50, 0.30],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.50, "HAIRF_Spec0": 0.30, "HAIRF_Spec1": 0.30, "HAIRF_Scraggle": 0.50
+      }
+    },
+    "blonde": {
+      "name": "Blonde",
+      "description": "Light blonde hair",
+      "commands": {
+        "HCR": 0.90, "HCG": 0.80, "HCB": 0.60,
+        "HAIRF_hairMelanin": 0.20, "HAIRF_hairRedness": 0.10, "HAIRF_HairRoughness": 0.40, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.40, "HAIRF_HighlightsBlending": 0.70, "HAIRF_HighlightsIntensity": 0.60,
+        "HAIRF_HighlightsMelanin": 0.10, "HAIRF_HighlightsRedness": 0.10,
+        "HAIRC_HighlightshairDye": [1.00, 0.90, 0.80],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.60, "HAIRF_Spec0": 0.40, "HAIRF_Spec1": 0.40, "HAIRF_Scraggle": 0.30
+      }
+    },
+    "redhead": {
+      "name": "Redhead",
+      "description": "Red/ginger hair",
+      "commands": {
+        "HCR": 0.80, "HCG": 0.30, "HCB": 0.20,
+        "HAIRF_hairMelanin": 0.30, "HAIRF_hairRedness": 0.90, "HAIRF_HairRoughness": 0.70, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.30, "HAIRF_HighlightsBlending": 0.50, "HAIRF_HighlightsIntensity": 0.70,
+        "HAIRF_HighlightsMelanin": 0.20, "HAIRF_HighlightsRedness": 0.80,
+        "HAIRC_HighlightshairDye": [0.90, 0.40, 0.20],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.50, "HAIRF_Spec0": 0.30, "HAIRF_Spec1": 0.30, "HAIRF_Scraggle": 0.60
+      }
+    },
+    "black": {
+      "name": "Black Hair",
+      "description": "Dark black hair",
+      "commands": {
+        "HCR": 0.10, "HCG": 0.10, "HCB": 0.10,
+        "HAIRF_hairMelanin": 0.90, "HAIRF_hairRedness": 0.00, "HAIRF_HairRoughness": 0.80, "HAIRF_Desat": 0.20,
+        "HAIRF_Highlights": 0.10, "HAIRF_HighlightsBlending": 0.30, "HAIRF_HighlightsIntensity": 0.30,
+        "HAIRF_HighlightsMelanin": 0.70, "HAIRF_HighlightsRedness": 0.00,
+        "HAIRC_HighlightshairDye": [0.30, 0.30, 0.30],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.40, "HAIRF_Spec0": 0.20, "HAIRF_Spec1": 0.20, "HAIRF_Scraggle": 0.40
+      }
+    },
+    "platinum": {
+      "name": "Platinum",
+      "description": "Platinum blonde hair",
+      "commands": {
+        "HCR": 0.95, "HCG": 0.95, "HCB": 0.95,
+        "HAIRF_hairMelanin": 0.05, "HAIRF_hairRedness": 0.00, "HAIRF_HairRoughness": 0.20, "HAIRF_Desat": 0.30,
+        "HAIRF_Highlights": 0.60, "HAIRF_HighlightsBlending": 0.80, "HAIRF_HighlightsIntensity": 0.80,
+        "HAIRF_HighlightsMelanin": 0.02, "HAIRF_HighlightsRedness": 0.00,
+        "HAIRC_HighlightshairDye": [1.00, 1.00, 1.00],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.70, "HAIRF_Spec0": 0.50, "HAIRF_Spec1": 0.50, "HAIRF_Scraggle": 0.20
+      }
+    },
+    "ombre": {
+      "name": "Ombre Style",
+      "description": "Dark roots fading to golden tips",
+      "commands": {
+        "HCR": 0.40, "HCG": 0.30, "HCB": 0.20,
+        "HAIRF_hairMelanin": 0.60, "HAIRF_hairRedness": 0.30, "HAIRF_HairRoughness": 0.50, "HAIRF_Desat": 0.10,
+        "HAIRF_Highlights": 0.20, "HAIRF_HighlightsBlending": 0.50, "HAIRF_HighlightsIntensity": 0.40,
+        "HAIRF_HighlightsMelanin": 0.40, "HAIRF_HighlightsRedness": 0.40,
+        "HAIRC_HighlightshairDye": [0.70, 0.50, 0.30],
+        "HAIRF_Ombre": 0.80, "HAIRF_OmbreContrast": 0.70, "HAIRF_OmbreIntensity": 0.80,
+        "HAIRF_OmbreMelanin": 0.20, "HAIRF_OmbreRedness": 0.10,
+        "HAIRC_OmbrehairDye": [0.90, 0.80, 0.60],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.50, "HAIRF_Spec0": 0.30, "HAIRF_Spec1": 0.30, "HAIRF_Scraggle": 0.50
+      }
+    },
+    "highlights": {
+      "name": "Highlighted",
+      "description": "Rich base with prominent golden highlights",
+      "commands": {
+        "HCR": 0.50, "HCG": 0.40, "HCB": 0.30,
+        "HAIRF_hairMelanin": 0.60, "HAIRF_hairRedness": 0.20, "HAIRF_HairRoughness": 0.50, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.70, "HAIRF_HighlightsBlending": 0.80, "HAIRF_HighlightsIntensity": 0.70,
+        "HAIRF_HighlightsMelanin": 0.30, "HAIRF_HighlightsRedness": 0.10,
+        "HAIRC_HighlightshairDye": [0.90, 0.80, 0.60],
+        "HAIRF_Ombre": 0.20, "HAIRF_OmbreContrast": 0.40, "HAIRF_OmbreIntensity": 0.40,
+        "HAIRF_OmbreMelanin": 0.50, "HAIRF_OmbreRedness": 0.30,
+        "HAIRC_OmbrehairDye": [0.70, 0.60, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.60, "HAIRF_Spec0": 0.40, "HAIRF_Spec1": 0.40, "HAIRF_Scraggle": 0.40
+      }
+    },
+    "sunset": {
+      "name": "Sunset",
+      "description": "Warm auburn roots with fiery orange-gold ombre tips",
+      "commands": {
+        "HCR": 0.55, "HCG": 0.20, "HCB": 0.10,
+        "HAIRF_hairMelanin": 0.50, "HAIRF_hairRedness": 0.70, "HAIRF_HairRoughness": 0.45, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.50, "HAIRF_HighlightsBlending": 0.70, "HAIRF_HighlightsIntensity": 0.60,
+        "HAIRF_HighlightsMelanin": 0.15, "HAIRF_HighlightsRedness": 0.60,
+        "HAIRC_HighlightshairDye": [0.95, 0.55, 0.15],
+        "HAIRF_Ombre": 0.85, "HAIRF_OmbreContrast": 0.75, "HAIRF_OmbreIntensity": 0.90,
+        "HAIRF_OmbreMelanin": 0.10, "HAIRF_OmbreRedness": 0.40,
+        "HAIRC_OmbrehairDye": [1.00, 0.75, 0.25],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.55, "HAIRF_Spec0": 0.45, "HAIRF_Spec1": 0.40, "HAIRF_Scraggle": 0.35
+      }
+    },
+    "arctic": {
+      "name": "Arctic",
+      "description": "Ultra-light silver with icy blue highlights",
+      "commands": {
+        "HCR": 0.85, "HCG": 0.88, "HCB": 0.95,
+        "HAIRF_hairMelanin": 0.03, "HAIRF_hairRedness": 0.00, "HAIRF_HairRoughness": 0.15, "HAIRF_Desat": 0.40,
+        "HAIRF_Highlights": 0.70, "HAIRF_HighlightsBlending": 0.85, "HAIRF_HighlightsIntensity": 0.75,
+        "HAIRF_HighlightsMelanin": 0.01, "HAIRF_HighlightsRedness": 0.00,
+        "HAIRC_HighlightshairDye": [0.70, 0.85, 1.00],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.75, "HAIRF_Spec0": 0.55, "HAIRF_Spec1": 0.55, "HAIRF_Scraggle": 0.15
+      }
+    },
+    "midnight": {
+      "name": "Midnight",
+      "description": "Deep black with subtle purple-blue highlights",
+      "commands": {
+        "HCR": 0.08, "HCG": 0.05, "HCB": 0.12,
+        "HAIRF_hairMelanin": 0.95, "HAIRF_hairRedness": 0.05, "HAIRF_HairRoughness": 0.70, "HAIRF_Desat": 0.10,
+        "HAIRF_Highlights": 0.35, "HAIRF_HighlightsBlending": 0.60, "HAIRF_HighlightsIntensity": 0.45,
+        "HAIRF_HighlightsMelanin": 0.50, "HAIRF_HighlightsRedness": 0.10,
+        "HAIRC_HighlightshairDye": [0.30, 0.15, 0.60],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.35, "HAIRF_Spec0": 0.25, "HAIRF_Spec1": 0.20, "HAIRF_Scraggle": 0.30
+      }
+    },
+    "roseGold": {
+      "name": "Rose Gold",
+      "description": "Warm pink-gold with shimmering highlights",
+      "commands": {
+        "HCR": 0.85, "HCG": 0.55, "HCB": 0.50,
+        "HAIRF_hairMelanin": 0.15, "HAIRF_hairRedness": 0.50, "HAIRF_HairRoughness": 0.25, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.60, "HAIRF_HighlightsBlending": 0.75, "HAIRF_HighlightsIntensity": 0.70,
+        "HAIRF_HighlightsMelanin": 0.08, "HAIRF_HighlightsRedness": 0.35,
+        "HAIRC_HighlightshairDye": [1.00, 0.75, 0.65],
+        "HAIRF_Ombre": 0.30, "HAIRF_OmbreContrast": 0.40, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.10, "HAIRF_OmbreRedness": 0.30,
+        "HAIRC_OmbrehairDye": [1.00, 0.85, 0.75],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.65, "HAIRF_Spec0": 0.50, "HAIRF_Spec1": 0.50, "HAIRF_Scraggle": 0.25
+      }
+    },
+    "clear": {
+      "name": "Clear All",
+      "description": "Resets hair to default values",
+      "commands": {
+        "HCR": 0.50, "HCG": 0.30, "HCB": 0.20,
+        "HAIRF_hairMelanin": 0.50, "HAIRF_hairRedness": 0.30, "HAIRF_HairRoughness": 0.50, "HAIRF_Desat": 0.00,
+        "HAIRF_Highlights": 0.00, "HAIRF_HighlightsBlending": 0.50, "HAIRF_HighlightsIntensity": 0.50,
+        "HAIRF_HighlightsMelanin": 0.30, "HAIRF_HighlightsRedness": 0.30,
+        "HAIRC_HighlightshairDye": [0.80, 0.70, 0.50],
+        "HAIRF_Ombre": 0.00, "HAIRF_OmbreContrast": 0.50, "HAIRF_OmbreIntensity": 0.50,
+        "HAIRF_OmbreMelanin": 0.30, "HAIRF_OmbreRedness": 0.50,
+        "HAIRC_OmbrehairDye": [0.90, 0.40, 0.40],
+        "HAIRF_OpacityNear": 1.00, "HAIRF_OpacityFar": 0.50, "HAIRF_Spec0": 0.30, "HAIRF_Spec1": 0.30, "HAIRF_Scraggle": 0.50
+      }
+    }
+  }
+}

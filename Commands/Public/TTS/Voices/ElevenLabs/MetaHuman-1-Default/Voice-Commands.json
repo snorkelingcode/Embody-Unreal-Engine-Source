@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Lucy",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Lucy",
+    "id": "lucy",
+    "voiceId": "oAyAUy2T7oSLWwREApp9",
+    "character": "MetaHuman 1 (Default Female)",
+    "isDefault": true
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=oAyAUy2T7oSLWwREApp9",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

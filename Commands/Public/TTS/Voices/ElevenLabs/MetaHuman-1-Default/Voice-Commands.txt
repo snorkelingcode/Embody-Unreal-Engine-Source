@@ -1,0 +1,4 @@
+Lucy - MetaHuman 1 (Default Female)
+Voice ID: oAyAUy2T7oSLWwREApp9
+Init: ElevenLabs={apiKey}=oAyAUy2T7oSLWwREApp9
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

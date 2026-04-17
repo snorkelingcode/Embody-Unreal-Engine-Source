@@ -1,0 +1,1 @@
+Narration Commands enable and disable lip sync. Narration on = Lipsync disabled. Narration off = Lipsync enabled.

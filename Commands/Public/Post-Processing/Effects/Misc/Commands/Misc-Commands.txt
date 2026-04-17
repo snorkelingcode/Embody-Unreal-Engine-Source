@@ -1,0 +1,4 @@
+Miscellaneous Post-Processing - POST
+CGG_Misc_ToneCurveAmount_{value} - Tone curve amount (0-1, step 0.01)
+CGG_Misc_LUTintensity_{value} - LUT intensity (0-1, step 0.01)
+CGG_Dirt_Intensity_{value} - Lens dirt intensity (0-1, step 0.01)

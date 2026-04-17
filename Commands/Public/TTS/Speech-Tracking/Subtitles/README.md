@@ -1,0 +1,1 @@
+This API displays the subtitles for TTS. Subtitles are played as the TTS chunking occurs.

@@ -1,0 +1,71 @@
+Build Your Own World - POST
+
+Core Spawn Commands:
+SPWN_{tag}_{Category.Object}_{x}_{y}_{z}_{rotX}_{rotY}_{rotZ}_{scaleX}_{scaleY}_{scaleZ} - Spawn object
+SPWNMOVE_{tag}_{x}_{y}_{z}_{rotX}_{rotY}_{rotZ}_{scaleX}_{scaleY}_{scaleZ} - Move/transform object
+SPWNDEL_{tag} - Delete specific object by tag
+SPWND - Delete ALL spawned objects
+
+Tag Rules: Must be unique, no underscores (used as delimiters).
+
+Special Object Types:
+  Live.Plane - Background image/video plane (supports BACK_ and m3u8_ commands)
+  LIGHT.Volume - Volumetric light (supports LIGHTC_ and LIGHTI_ commands)
+  Procedural.Rock - Procedural rock with foliage (supports PROC* commands)
+  Meta.* - Additional MetaHuman characters
+
+Procedural Rock Commands (for Procedural.Rock objects):
+  PROCM_{tag}_{meshName} - Set base mesh (ForestRock1-10)
+  PROCG_{tag}_{meshName} - Set grass mesh (Grass1-3)
+  PROCGD_{tag}_{value} - Grass density (0.01-1)
+  PROCGZ_{tag}_{value} - Grass Z offset (0-1)
+  PROCM_{tag}_Ferns_Mesh_{meshName} - Set ferns mesh (Fern1-2)
+  PROCFD_{tag}_{value} - Ferns density (0-1)
+  PROCFZ_{tag}_{value} - Ferns Z offset (0-1)
+  PROCR_{tag}_{meshName} - Set rocks mesh (RiverRock1-3, RiverRockGroup)
+  PROCRD_{tag}_{value} - Rocks density (0-1)
+  PROCRZ_{tag}_{value} - Rocks Z offset (0-1)
+  PROCP_{tag}_{meshName} - Set pebbles mesh (Pebbles1-2)
+  PROCPD_{tag}_{value} - Pebbles density (0-1)
+  PROCPZ_{tag}_{value} - Pebbles Z offset (0-1)
+  PROCL_{tag}_{meshName} - Set logs mesh (Log1-6)
+  PROCLD_{tag}_{value} - Logs density (0-1)
+  PROCLZ_{tag}_{value} - Logs Z offset (0-1)
+
+Spawnable Object Catalog (Category.Object format):
+
+AC: Duct
+Bathroom: Sinks, Toilet, HandDryer, StallDoor, Stall1, Stall2
+Beverage: Beer, CoffeeBox, EnergyDrink, Juice, MilkBox, MilkJug, Soda, Wine
+Burn: Pipe, Well
+CAVE: Arch1, Pillar1, Wall1, Wall2, BasaltThick, BasaltFloorCircle, FloorHole, FloorSqaure, FloorSquare2, Sapling1-3, Cliff-Cliff6, Stairway1, Pillar2, Pillar3, Railing, Railing2
+Closet: Dresser1-6
+Clothing: Bag1, Bag2, CaseBag, Backpack, Towel1-3, Hanger1-2, Rack, UnderShirt, Blouse, Hoodie, Tshirt1-2, Dress, Dress2, Cardigan
+Doors: WoodenDoor1, PlasticDoor1, WoodenDoorFrame, DoubleDoorFrame3
+Floor: Dirt
+Flooring: Floor1
+Floors: Floor1
+Food: RedApple, YellowApple, GreenApple, Avocado, Baguette, PackedBaguette, Bannana, Bread, Bread2, Bubblegum, Butter, CanBeef, CanFood, CanVegi, CandyBar, Carrot, Cheese, CheesePackaged, Chips, ChocolateBar, Corn, CornFlakes, Crackers, Cucumber, Curd, Eggs, Fish, FilletFish, FlourBox, Garlic, IceCream, JamRed, JamYellow, KetchupPacket, Lemon, Lime, MeatSlab, BeefFillet, LargeBeefFillet, CupNoodle, Onion, Orange, BeefPatty, PeanutButter, Pear, Pepper, Pumpkin, Rice, Salt, SugarBox, Tea, Tomato
+Furnish: Chair1, BenchChair, Chair3, WoodenShelvings1, Table1, Table2, Container, Watercooler, Kettle, CoffeeMachine, CoffeeKettle, KitchenLamp, Microwave, Tray, PendantBench, Refrigerator1-3, Mirror, RestroomDresser, Shelf, Locker, Cubby, CubbyDoor1, WoodShelvings2
+HOLIDAY: PumpkinBlowupGate, CreepyMonkey, SpookyDecor, SpookyPumpkin, Skeleton, CardboardCastle, EvilGhost, CatDecor
+Infrastructure: Road
+LIGHT: Volume
+Lighting: Lamp7, Lamp3, Lamp2, WallLamp
+Live: Plane
+MAGIC: Portal1-10
+Meta: Sarah, Harry, Zach, Lucy
+Outdoor: Fern, Rock1, Rock2
+Planters: Planter, Planter2-3, Planter5-7, Planter9-10, Pot12
+Plants: Pot1-11, Pot13-15, Tree1-4
+Procedural: Rock
+School: Map, Clock, Carton1, CoffeeMaker, Book1-6, Bin, NewtonToy, PaperHolder, Binder, Calculator, PaperHolder2, StudentChair, StudentDesk, TeachersDesk, Computer, CalculatorCase, Projector, Backpack1-3, Carton, HangingLetters, Plant, Trashbin, RedLamp, Magazine, SpiderTank, RedLamp2, WallboardGreen, WallboardBlack, FireAlarm, FireBell, Vent, VolcanoProject, Trophy, ePencilSharpener, PencilSharpener, RubrikCube, PlasticBin, Chalkboard, AdjustableTVCart, OrangeFlag, FilingCabinet, SmallWallPoster, WallboardBlue, Shelf, WallConstellations_01a-h
+Scifi: Door, Wall, Floor, Wedge, CornerWedge, Lamp, SpaceSuit
+Sim: Token
+Store: FireExtinguisher, FireExtinguisherDoor, FireExtinguisherHousing, Tube1-2, Cable
+Tech: ComputerScreen, ComputerKeyboard, ComputerMouse, MountedTV, CCTV
+Travel: Suitcase1-2
+Trash: TrashBin, BigTrashCan
+Utilities: LightSwitch, PowerOutlet
+VTuber: VTuber_Desk, VTuber_Chair, VTuber_Monitor, VTuber_RingLight, VTuber_Microphone, VTuber_Backdrop
+Walls: Wall1, Wall2
+Water: River, Lake

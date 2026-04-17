@@ -1,0 +1,6 @@
+Exposure - POST
+EXPO_Comp_{value} - Exposure compensation (-5 to 5, step 0.01)
+EXPO_MinEV100_{value} - Minimum exposure value EV100 (-10 to 0, step 0.1)
+EXPO_MaxEV100_{value} - Maximum exposure value EV100 (0 to 10, step 0.1)
+EXPO_SpeedUp_{value} - Auto-exposure speed up (0.1-5, step 0.1)
+EXPO_SpeedDown_{value} - Auto-exposure speed down (0.1-5, step 0.1)

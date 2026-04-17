@@ -1,0 +1,27 @@
+Float sliders (MKUPF) - POST
+MKUPF_BlusherMakeup_{value} - Blusher intensity on/off
+MKUPF_BlusherMakeupIntensity_{value} - Blusher strength
+MKUPF_BlusherMakeupRoughness_{value} - Blusher roughness
+MKUPF_EyeMakeup_{value} - Eye makeup intensity on/off
+MKUPF_EyeMakeupMetalness_{value} - Eye makeup metallic sheen
+MKUPF_EyeMakeupRoughness_{value} - Eye makeup roughness
+MKUPF_EyeMakeupScattering_{value} - Eye makeup light scattering
+MKUPF_EyeMakeupTransparency_{value} - Eye makeup transparency
+MKUPF_FoundationMakeup_{value} - Foundation intensity on/off
+MKUPF_FoundationMakeupConcealerIntensity_{value} - Concealer intensity
+MKUPF_FoundationMakeupIntensity_{value} - Foundation strength
+MKUPF_Lipstick_{value} - Lipstick intensity on/off
+MKUPF_LipstickRoughness_{value} - Lipstick roughness
+MKUPF_LipstickScattering_{value} - Lipstick light scattering
+MKUPF_LipstickTransparency_{value} - Lipstick transparency
+
+Color pickers (MKUPC) - POST
+MKUPC_BlusherMakeupColor_{r}_{g}_{b} - Blusher color
+MKUPC_EyeMakeupPrimaryColor_{r}_{g}_{b} - Eye makeup primary color
+MKUPC_EyeMakeupSecondaryColor_{r}_{g}_{b} - Eye makeup secondary color
+MKUPC_FoundationMakeupColor_{r}_{g}_{b} - Foundation color
+MKUPC_ConcealerMakeupColor_{r}_{g}_{b} - Concealer color
+MKUPC_LipstickColor_{r}_{g}_{b} - Lipstick color
+
+All float values are 0.00-1.00. All color values are RGB floats 0.00-1.00.
+Presets (Natural, Dramatic, Party, Clear All) send all float and color commands at once.

@@ -1,0 +1,21 @@
+ElevenLabs={apiKey}={voiceId} - Sets ElevenLabs API credentials on UE before sending TTS - POST
+
+TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{modelFlag}_{emotion}_{intensity} - Sends text to UE for ElevenLabs TTS with MetaHuman lip-sync - POST
+Default params: stability=0.5, similarity=0.75, style=0.0, speakerBoost=1.0, modelFlag=1
+Emotion defaults to Neutral_0.5 unless emotion analyzer is enabled (uses OpenAI to detect emotion)
+
+Text is sanitized before sending:
+- Newlines replaced with spaces
+- Underscores replaced with spaces
+- Special characters stripped (only word chars, spaces, and basic punctuation kept)
+
+Chunking:
+- Long scripts are split into chunks
+- Each chunk is sent as a separate TTS command
+- Frontend waits for TTS_Complete before sending the next chunk
+- Chunks are processed sequentially with 100ms delay between
+
+UE responds with:
+TTS_Started - Avatar began speaking - GET
+TTS_Complete - Avatar finished speaking (triggers next chunk if queued) - GET
+{duration} - Float representing audio duration in seconds (fallback timing) - GET

@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+server_env/
+signalling/node_modules/
+signalling/logs/
+signalling/www/*.js
+signalling/www/*.js.LICENSE.txt
+
+# Trained AI models (can be large)
+anim_models/
+
+# Electron build output
+dist/
+out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log

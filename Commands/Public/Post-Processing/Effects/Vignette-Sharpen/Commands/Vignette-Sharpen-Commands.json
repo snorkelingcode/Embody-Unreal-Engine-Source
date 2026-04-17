@@ -1,0 +1,19 @@
+{
+  "api": "Vignette & Sharpen",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "VIG_{value}",
+        "description": "Vignette intensity",
+        "params": { "value": "number - float 0 to 2, step 0.01" }
+      },
+      {
+        "command": "SHARP_{value}",
+        "description": "Sharpening intensity",
+        "params": { "value": "number - float 0 to 2, step 0.1" }
+      }
+    ],
+    "GET": []
+  }
+}

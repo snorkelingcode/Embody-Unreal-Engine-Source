@@ -1,0 +1,18 @@
+{
+  "api": "View Mode",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Switches the CineCamera filmback between portrait (mobile) and landscape (desktop) aspect ratios.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "VIEW.{mode}",
+        "description": "Switches the camera filmback to match the target device aspect ratio",
+        "modes": {
+          "VIEW.Mobile": "Portrait 9:16 (sensor 7.088 x 13.365mm, constrained aspect ratio)",
+          "VIEW.Desktop": "Landscape 16:9 (sensor 23.76 x 13.365mm, unconstrained aspect ratio)"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

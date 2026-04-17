@@ -1,0 +1,5 @@
+View mode commands (VIEW) - POST
+VIEW.Mobile - Portrait 9:16 aspect ratio for mobile devices
+VIEW.Desktop - Landscape 16:9 aspect ratio for desktop displays
+
+Uses dot separator. Switches the CineCamera filmback to match the target device.

@@ -1,0 +1,18 @@
+{
+	"log_folder": "logs",
+	"log_level_console": "info",
+	"log_level_file": "info",
+	"streamer_port": "8888",
+	"player_port": "8080",
+	"sfu_port": "8889",
+	"max_players": "0",
+	"serve": true,
+	"http_root": "www",
+	"homepage": "content-creator.html",
+	"https": false,
+	"https_redirect": false,
+	"rest_api": false,
+	"log_config": false,
+	"stdin": false,
+	"console_messages": "basic"
+}

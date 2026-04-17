@@ -1,0 +1,122 @@
+{
+  "api": "Clothing",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Outfit system with 5 equipment slots and parametric texture skins. Clothing items are character-specific (Lucy, Sarah, Harry, Zach). Smart auto-pairing: selecting a top automatically sets matching bottoms.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "OF_{clothingValue}",
+        "description": "Equips a clothing item to its slot. Clothing values are character-specific.",
+        "slots": {
+          "head": {
+            "description": "Headwear slot",
+            "items": [
+              "Headwear_None"
+            ]
+          },
+          "torso": {
+            "description": "Top/torso slot",
+            "items": {
+              "SleevelessDress": ["Tops_Lucy.SleevelessDress", "Tops_Sarah.SleevelessDress"],
+              "TurtleNeckSweater": ["Tops_Lucy.TurtleNeckSweater", "Tops_Sarah.TurtleNeckSweater", "Tops_Harry.TurtleNeckSweater"],
+              "TShirt": ["Tops_Lucy.TShirt", "Tops_Sarah.TShirt", "Tops_Harry.TShirt", "Tops_Zach.TShirt"],
+              "TripleLayerVest": ["Tops_Lucy.TripleLayerVest", "Tops_Sarah.TripleLayerVest", "Tops_Harry.TripleLayerVest", "Tops_Zach.TripleLayerVest"],
+              "EmbodyPuffer": ["Tops_Lucy.EmbodyPuffer"],
+              "LivepeerOutfit": ["Tops_Lucy.LivepeerOutfit"],
+              "PumpkinWitch": ["Tops_Lucy.PumpkinWitch"]
+            }
+          },
+          "legs": {
+            "description": "Bottoms/legs slot",
+            "items": {
+              "None": ["Bottoms_None"],
+              "Skirt": ["Bottoms_Lucy.Skirt", "Bottoms_Sarah.Skirt"],
+              "CargoPant": ["Bottoms_Lucy.CargoPant", "Bottoms_Sarah.CargoPant", "Bottoms_Harry.CargoPant", "Bottoms_Zach.CargoPant"],
+              "Shorts": ["Bottoms_Lucy.Shorts", "Bottoms_Sarah.Shorts", "Bottoms_Harry.Shorts", "Bottoms_Zach.Shorts"],
+              "AthleticShortsF": ["Bottoms_Lucy.AthleticShortsF", "Bottoms_Sarah.AthleticShortsF"]
+            }
+          },
+          "feet": {
+            "description": "Shoes/feet slot",
+            "items": {
+              "None": ["Shoes_None"],
+              "Sneakers": ["Shoes_Lucy.Sneakers", "Shoes_Sarah.Sneakers", "Shoes_Harry.Sneakers", "Shoes_Zach.Sneakers"],
+              "Heels": ["Shoes_Lucy.Heels", "Shoes_Sarah.Heels"]
+            }
+          },
+          "back": {
+            "description": "Back/magic accessory slot",
+            "items": [
+              "Magic_None",
+              "Magic_Wings"
+            ]
+          }
+        },
+        "autoPairing": {
+          "description": "When a top is selected, the frontend automatically sets matching bottoms",
+          "rules": {
+            "SleevelessDress": "Sets legs to Bottoms_None (dress covers legs)",
+            "TurtleNeckSweater": "Sets legs to Bottoms_{Character}.Skirt",
+            "TShirt": "Sets legs to Bottoms_{Character}.CargoPant",
+            "TripleLayerVest": "Sets legs to Bottoms_{Character}.Shorts"
+          }
+        },
+        "examples": [
+          "OF_Tops_Lucy.TurtleNeckSweater",
+          "OF_Bottoms_Harry.CargoPant",
+          "OF_Shoes_Zach.Sneakers",
+          "OF_Magic_Wings",
+          "OF_Headwear_None"
+        ]
+      },
+      {
+        "command": "OFC_{category}_{type}.{texture}",
+        "description": "Applies a parametric texture skin to the current clothing item. Only supported on specific clothing types.",
+        "params": {
+          "category": "string - Tops | Bottoms",
+          "type": "string - clothing type (SleevelessDress, TShirt, CargoPant, Skirt)",
+          "texture": "string - texture name"
+        },
+        "supportedTypes": {
+          "SleevelessDress": {
+            "category": "Tops",
+            "textures": ["Default", "BeigeWoven", "BlueClouds", "BWFerro", "BWShred", "BWStudded", "CarbonFiber", "GreenGrid", "GreenNet", "GreenSquared", "GreyFeathers", "GreyFelt", "LinenBeige", "Phoenix", "Polkadot", "RedNylon", "RipstopFloral", "RoyalGreen", "RoyalPink", "SalmonCotton"]
+          },
+          "TShirt": {
+            "category": "Tops",
+            "textures": ["Default", "BeigeWash", "NavyWhiteStripe", "PinkCamo", "PinkHexLogo", "Starlight", "ShadedSquare", "RWFlannel", "GreyLogo", "Grey", "GreenStripeLogo", "GreenStripe", "BlueDiamond", "BlackLogo", "PlainWhiteLogo", "PlainWhite"]
+          },
+          "CargoPant": {
+            "category": "Bottoms",
+            "textures": ["Default", "AfghanCamo", "BWCamo", "BWHex", "CaddyFlannel", "Dart", "FullCamo", "PinkCamo", "PinkHearts", "PinkPlad", "RBFlannel", "RWFlannel", "WHex", "WhiteoutHex", "WOHex", "YellowThread"]
+          },
+          "Skirt": {
+            "category": "Bottoms",
+            "textures": ["Default", "Tiger", "NavyLint", "BlueFloral", "RedFloral"]
+          }
+        },
+        "examples": [
+          "OFC_Tops_SleevelessDress.Phoenix",
+          "OFC_Tops_TShirt.NavyWhiteStripe",
+          "OFC_Bottoms_CargoPant.PinkCamo",
+          "OFC_Bottoms_Skirt.BlueFloral"
+        ]
+      },
+      {
+        "command": "OFCD_{objectType}_{url}",
+        "description": "Applies a custom UV map texture from a public URL to clothing. The image replaces the clothing's base color texture. URL must be publicly accessible (e.g., hosted on ImgBB). Created via AI generation (Stability AI / Gemini) or freehand doodle on the Custom Materials page.",
+        "params": {
+          "objectType": "string - Legs (currently supported)",
+          "url": "string - publicly accessible image URL (HTTPS)"
+        },
+        "supportedObjects": {
+          "Legs": "Skirt UV map texture"
+        },
+        "examples": [
+          "OFCD_Legs_https://i.ibb.co/example/custom-skirt-texture.png"
+        ]
+      }
+    ],
+    "GET": []
+  }
+}

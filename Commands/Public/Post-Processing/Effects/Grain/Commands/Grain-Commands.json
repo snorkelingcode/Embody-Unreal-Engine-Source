@@ -1,0 +1,49 @@
+{
+  "api": "Grain",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "GRAIN_GrainInten_{value}",
+        "description": "Film grain intensity",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_GrainShadow_{value}",
+        "description": "Grain shadow intensity",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_GrainMidtones_{value}",
+        "description": "Grain midtone intensity",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_GrainHighlight_{value}",
+        "description": "Grain highlight intensity",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_HighlightsMax_{value}",
+        "description": "Grain highlights maximum",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_HighlightsMin_{value}",
+        "description": "Grain highlights minimum",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_ShadowMax_{value}",
+        "description": "Grain shadow maximum",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "GRAIN_TexelSize_{value}",
+        "description": "Grain texel size",
+        "params": { "value": "number - float 0.1 to 2, step 0.01" }
+      }
+    ],
+    "GET": []
+  }
+}

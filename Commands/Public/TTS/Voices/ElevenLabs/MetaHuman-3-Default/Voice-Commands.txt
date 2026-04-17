@@ -1,0 +1,4 @@
+Harry - MetaHuman 3 (Default Male)
+Voice ID: FVr8g66ZdLr7fVJct2Dh
+Init: ElevenLabs={apiKey}=FVr8g66ZdLr7fVJct2Dh
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

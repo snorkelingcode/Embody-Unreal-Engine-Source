@@ -1,0 +1,74 @@
+Post-Processing Preset Effects
+Each preset sends a batch of CGG_ and CG_ commands for a complete visual style.
+
+Default - Reset to default settings
+  CGG_Global_Saturation_1_1_1_1
+  CGG_Global_Contrast_1_1_1_1
+  CGG_Global_Gamma_1_1_1_1
+  CGG_Global_Gain_1_1_1
+  CGG_Global_Offset_0_0_0_0
+  CG_Temp_6500
+  CG_Tint_0
+
+Monochromatic - Black and white aesthetic
+  CGG_Global_Saturation_0_0_0_1
+  CGG_Global_Contrast_1.2_1.2_1.2_1
+  CGG_Global_Gamma_1_1_1_1
+  CGG_Global_Gain_1_1_1
+  CGG_Global_Offset_0_0_0_0
+  CG_Temp_6500
+  CG_Tint_0
+
+Analogous - Harmonious neighboring colors
+  CGG_Global_Saturation_1.2_1.2_1.2_1
+  CGG_Global_Contrast_1.1_1.1_1.1_1
+  CGG_Global_Gamma_1_1_1_1
+  CGG_Global_Gain_1_1_1
+  CGG_Global_Offset_0_0_0_0
+  CG_Temp_6500
+  CG_Tint_0
+
+Noir - Dark, moody atmosphere
+  CGG_Global_Saturation_0.3_0.3_0.3_1
+  CGG_Global_Contrast_1.5_1.5_1.5_1
+  CGG_Global_Gamma_0.8_0.8_0.8_1
+  CGG_Global_Gain_0.9_0.9_0.9
+  CGG_Global_Offset_-0.1_-0.1_-0.1_0
+  CG_Temp_5000
+  CG_Tint_0
+
+Vintage Film - Classic film photography
+  CGG_Global_Saturation_0.85_0.85_0.85_1
+  CGG_Global_Contrast_1.15_1.15_1.15_1
+  CGG_Global_Gamma_1.1_1.1_1.1_1
+  CGG_Global_Gain_1.05_1_0.95
+  CGG_Global_Offset_0.05_0.03_0_0
+  CG_Temp_5500
+  CG_Tint_5
+
+Pastel Dream - Soft, dreamy pastels
+  CGG_Global_Saturation_0.7_0.7_0.7_1
+  CGG_Global_Contrast_0.9_0.9_0.9_1
+  CGG_Global_Gamma_1.2_1.2_1.2_1
+  CGG_Global_Gain_1.1_1.1_1.1
+  CGG_Global_Offset_0.1_0.1_0.1_0
+  CG_Temp_6800
+  CG_Tint_5
+
+Cold Blue - Icy, cool tones
+  CGG_Global_Saturation_1_1_1_1
+  CGG_Global_Contrast_1.1_1.1_1.1_1
+  CGG_Global_Gamma_1_1_1_1
+  CGG_Global_Gain_0.9_0.95_1.15
+  CGG_Global_Offset_0_0_0.05_0
+  CG_Temp_8000
+  CG_Tint_-10
+
+Teal & Orange - Cinematic blockbuster look
+  CGG_Global_Saturation_1.1_1.1_1.1_1
+  CGG_Global_Contrast_1.05_1.05_1.05_1
+  CGG_Global_Gamma_1.1_1.1_1.1_1
+  CGG_Global_Gain_1.05_1_0.95
+  CGG_Global_Offset_0_0.02_0.05_0
+  CG_Temp_6000
+  CG_Tint_-5

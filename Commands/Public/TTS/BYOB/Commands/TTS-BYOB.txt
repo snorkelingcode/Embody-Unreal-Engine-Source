@@ -1,0 +1,6 @@
+TTS_BYOB_{Path to file}_{Emotion}_{Emotion Intensity} - Sends a user-provided audio file path to UE for MetaHuman lip-sync playback - POST
+Format: TTS_BYOB_{Path to file}_{Emotion}_{Emotion Intensity}
+
+UE responds with:
+TTS_Started - Avatar began speaking - GET
+TTS_Complete - Avatar finished speaking - GET

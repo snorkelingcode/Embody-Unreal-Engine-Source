@@ -1,0 +1,14 @@
+{
+  "api": "Chromatic Aberration",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CHROME_Int_{value}",
+        "description": "Chromatic aberration intensity",
+        "params": { "value": "number - float 0 to 5, step 0.001" }
+      }
+    ],
+    "GET": []
+  }
+}

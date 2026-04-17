@@ -1,0 +1,27 @@
+Animated makeup effects run at 30fps via setInterval, cycling MKUPF and MKUPC commands over time.
+Same pattern as animated post processing on the Directors Cut page.
+Toggle on/off - only one animation active at a time.
+
+Heartbeat - Pulsing red lips and blusher that throb like a heartbeat - POST
+  Cycles MKUPF_Lipstick, MKUPF_BlusherMakeup, MKUPC_LipstickColor (red pulse)
+  Duration: 2s loop
+
+Color Cycle - Eye makeup smoothly rotates through the color spectrum - POST
+  Cycles MKUPC_EyeMakeupPrimaryColor, MKUPC_EyeMakeupSecondaryColor (RGB phase shift)
+  Duration: 6s loop
+
+Glow Up - Metalness and scattering ramp up then fade in waves - POST
+  Cycles MKUPF_EyeMakeupMetalness, MKUPF_EyeMakeupScattering, MKUPF_LipstickScattering
+  Duration: 4s loop
+
+Mood Ring - Lipstick and eye makeup shift between warm and cool tones - POST
+  Cycles MKUPC_LipstickColor, MKUPC_EyeMakeupPrimaryColor (warm-to-cool oscillation)
+  Duration: 8s loop
+
+Shimmer - Rapid metalness flicker on eyes and lips for a sparkle effect - POST
+  Cycles MKUPF_EyeMakeupMetalness, MKUPF_LipstickRoughness (random shimmer bursts)
+  Duration: 3s loop
+
+Bruise - Dark purple-green color shift on blusher and eye shadow - POST
+  Cycles MKUPC_BlusherMakeupColor, MKUPC_EyeMakeupPrimaryColor (purple to green)
+  Duration: 5s loop

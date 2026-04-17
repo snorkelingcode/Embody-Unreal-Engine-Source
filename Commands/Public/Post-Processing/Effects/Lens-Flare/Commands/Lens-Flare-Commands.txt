@@ -1,0 +1,5 @@
+Lens Flare - POST
+CGG_LenseFlare_Intensity_{value} - Lens flare intensity (0-2, step 0.01)
+CGG_LenseFlare_Tint_{value} - Lens flare tint (0-2, step 0.01)
+CGG_LenseFlare_BokehSize_{value} - Lens flare bokeh size (0-10, step 0.1)
+CGG_LenseFlare_Threshold_{value} - Lens flare threshold (0-2, step 0.01)

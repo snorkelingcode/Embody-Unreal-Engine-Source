@@ -1,0 +1,45 @@
+{
+  "api": "Makeup",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "MKUPF_{param}_{value}",
+        "description": "Sets a makeup float parameter",
+        "params": {
+          "value": "number - float 0.00 to 1.00 (or 2.00 for some params)"
+        },
+        "variants": {
+          "MKUPF_BlusherMakeup": "Blusher intensity on/off",
+          "MKUPF_BlusherMakeupIntensity": "Blusher strength",
+          "MKUPF_BlusherMakeupRoughness": "Blusher roughness",
+          "MKUPF_EyeMakeup": "Eye makeup intensity on/off",
+          "MKUPF_EyeMakeupMetalness": "Eye makeup metallic sheen",
+          "MKUPF_EyeMakeupRoughness": "Eye makeup roughness",
+          "MKUPF_EyeMakeupScattering": "Eye makeup light scattering",
+          "MKUPF_EyeMakeupTransparency": "Eye makeup transparency",
+          "MKUPF_FoundationMakeup": "Foundation intensity on/off",
+          "MKUPF_FoundationMakeupConcealerIntensity": "Concealer intensity",
+          "MKUPF_FoundationMakeupIntensity": "Foundation strength",
+          "MKUPF_Lipstick": "Lipstick intensity on/off",
+          "MKUPF_LipstickRoughness": "Lipstick roughness",
+          "MKUPF_LipstickScattering": "Lipstick light scattering",
+          "MKUPF_LipstickTransparency": "Lipstick transparency"
+        }
+      },
+      {
+        "command": "MKUPC_{param}_{r}_{g}_{b}",
+        "description": "Sets a makeup color parameter (RGB floats 0.00-1.00)",
+        "variants": {
+          "MKUPC_BlusherMakeupColor": "Blusher color",
+          "MKUPC_EyeMakeupPrimaryColor": "Eye makeup primary color",
+          "MKUPC_EyeMakeupSecondaryColor": "Eye makeup secondary color",
+          "MKUPC_FoundationMakeupColor": "Foundation color",
+          "MKUPC_ConcealerMakeupColor": "Concealer color",
+          "MKUPC_LipstickColor": "Lipstick color"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

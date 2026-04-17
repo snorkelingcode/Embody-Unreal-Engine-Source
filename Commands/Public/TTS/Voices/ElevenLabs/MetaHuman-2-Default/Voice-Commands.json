@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Mai",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Mai",
+    "id": "mai",
+    "voiceId": "WtA85syCrJwasGeHGH2p",
+    "character": "MetaHuman 2 (Default Female)",
+    "isDefault": false
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=WtA85syCrJwasGeHGH2p",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

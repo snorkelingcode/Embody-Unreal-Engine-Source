@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Witch",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Witch",
+    "id": "witch",
+    "voiceId": "HH3kybY6uEJ2ebSa9Vy3",
+    "character": "Witchlike",
+    "isDefault": false
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=HH3kybY6uEJ2ebSa9Vy3",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

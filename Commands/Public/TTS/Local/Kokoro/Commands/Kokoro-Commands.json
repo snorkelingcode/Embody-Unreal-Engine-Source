@@ -1,0 +1,43 @@
+{
+  "api": "Kokoro Local TTS",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "TTS_Kokoro_{voice}_{emotion}_{intensity}_{text}",
+        "description": "Sends text to UE for local Kokoro TTS synthesis with MetaHuman lip-sync",
+        "params": {
+          "voice": "string - voice name (Bella, Heart, Onyx, Eric)",
+          "emotion": "string - emotion label (Neutral, Happy, Sad, Disgust, Anger, Surprise, Fear, Confident, Excited, Bored, Playful, Confused)",
+          "intensity": "number - emotion intensity 0.0-1.0 (default: 0.7)",
+          "text": "string - sanitized text (no newlines, underscores, or special chars)"
+        },
+        "textSanitization": {
+          "newlines": "replaced with spaces",
+          "underscores": "replaced with spaces",
+          "specialChars": "stripped (only word chars, spaces, .,!?'- kept)",
+          "whitespace": "collapsed to single spaces"
+        },
+        "chunking": {
+          "description": "Long scripts are split into chunks and sent sequentially",
+          "behavior": "Frontend waits for TTS_Complete before sending next chunk",
+          "delayBetweenChunks": "100ms"
+        }
+      }
+    ],
+    "GET": [
+      {
+        "command": "TTS_Started",
+        "description": "UE notifies frontend that the avatar has begun speaking"
+      },
+      {
+        "command": "TTS_Complete",
+        "description": "UE notifies frontend that the avatar has finished speaking. Triggers next chunk if queued."
+      },
+      {
+        "command": "{duration}",
+        "description": "Float representing audio duration in seconds. Fallback timing mechanism if TTS_Started/TTS_Complete not available."
+      }
+    ]
+  }
+}

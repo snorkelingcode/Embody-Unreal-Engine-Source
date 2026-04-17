@@ -1,0 +1,1 @@
+This directory allows the user to control emotion of the face when the avatar is not speaking. You can also blend it while the lip sync animation plays.

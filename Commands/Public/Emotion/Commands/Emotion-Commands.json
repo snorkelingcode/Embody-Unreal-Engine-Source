@@ -1,0 +1,45 @@
+{
+  "api": "Emotion Control",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Controls ZenBlink procedural face emotion on the MetaHuman. Sets the emotion type, animation strength, blend weight, and blend mode at runtime.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "EMOTION_{Emotion}_{Strength}_{Blend}_{BlendMode}",
+        "description": "Sets the MetaHuman face emotion and animation blend parameters",
+        "params": {
+          "Emotion": "string - emotion enum name (see list below)",
+          "Strength": "number - FaceEmotionStrength 0.0-1.0 (how intense the emotion appears)",
+          "Blend": "number - FaceAnimationBlend 0.0-1.0 (blend between default slot and ZenBlink animation)",
+          "BlendMode": "string - Override or BlendByWeight"
+        },
+        "emotions": [
+          "Neutral", "Happy", "Sad", "Surprised", "Fearful",
+          "Focused", "Disgusted", "Childish", "Tired", "Annoyed",
+          "Confused", "Curious", "Embarrassed", "Angry", "Bored",
+          "Excited", "Relaxed", "Suspicious", "Proud", "Pained",
+          "Nervous", "Love"
+        ],
+        "blendModes": {
+          "Override": "Replaces the current face animation entirely",
+          "BlendByWeight": "Blends the emotion with the current face animation by weight"
+        },
+        "defaults": {
+          "Emotion": "Neutral",
+          "Strength": 0.8,
+          "Blend": 0.77,
+          "BlendMode": "BlendByWeight"
+        },
+        "examples": [
+          "EMOTION_Happy_0.8_0.77_BlendByWeight",
+          "EMOTION_Sad_0.5_0.6_Override",
+          "EMOTION_Neutral_0.66_0.77_BlendByWeight",
+          "EMOTION_Angry_1.0_0.9_Override",
+          "EMOTION_Love_0.7_0.8_BlendByWeight"
+        ],
+        "notes": "Strength controls how pronounced the emotion is on the face. Blend controls the mix between the default animation slot and ZenBlink's procedural animation. Use BlendByWeight when lip-sync is active to layer emotion on top of speech."
+      }
+    ],
+    "GET": []
+  }
+}

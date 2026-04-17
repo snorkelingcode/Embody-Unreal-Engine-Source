@@ -1,0 +1,104 @@
+{
+  "api": "Makeup Presets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Each preset batch-sends all MKUPF + MKUPC commands to apply a full makeup look at once",
+  "presets": {
+    "natural": {
+      "name": "Natural",
+      "description": "Subtle everyday look",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.30, "MKUPF_BlusherMakeupIntensity": 0.20, "MKUPF_BlusherMakeupRoughness": 0.70,
+        "MKUPC_BlusherMakeupColor": [0.90, 0.60, 0.50],
+        "MKUPF_EyeMakeup": 0.20, "MKUPF_EyeMakeupMetalness": 0.10, "MKUPF_EyeMakeupRoughness": 0.80, "MKUPF_EyeMakeupScattering": 0.10, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.40, 0.30, 0.20],
+        "MKUPC_EyeMakeupSecondaryColor": [0.30, 0.20, 0.10],
+        "MKUPF_FoundationMakeup": 0.40, "MKUPF_FoundationMakeupConcealerIntensity": 0.30, "MKUPF_FoundationMakeupIntensity": 0.60,
+        "MKUPC_FoundationMakeupColor": [0.90, 0.70, 0.60],
+        "MKUPC_ConcealerMakeupColor": [0.95, 0.80, 0.70],
+        "MKUPF_Lipstick": 0.30, "MKUPF_LipstickRoughness": 0.40, "MKUPF_LipstickScattering": 0.20, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.80, 0.40, 0.40]
+      }
+    },
+    "dramatic": {
+      "name": "Dramatic",
+      "description": "Bold evening look with deep blues and reds",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.70, "MKUPF_BlusherMakeupIntensity": 0.80, "MKUPF_BlusherMakeupRoughness": 0.30,
+        "MKUPC_BlusherMakeupColor": [0.90, 0.30, 0.30],
+        "MKUPF_EyeMakeup": 0.90, "MKUPF_EyeMakeupMetalness": 0.60, "MKUPF_EyeMakeupRoughness": 0.20, "MKUPF_EyeMakeupScattering": 0.30, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.10, 0.10, 0.80],
+        "MKUPC_EyeMakeupSecondaryColor": [0.05, 0.05, 0.60],
+        "MKUPF_FoundationMakeup": 0.80, "MKUPF_FoundationMakeupConcealerIntensity": 0.70, "MKUPF_FoundationMakeupIntensity": 0.90,
+        "MKUPC_FoundationMakeupColor": [0.85, 0.65, 0.55],
+        "MKUPC_ConcealerMakeupColor": [0.90, 0.75, 0.65],
+        "MKUPF_Lipstick": 0.90, "MKUPF_LipstickRoughness": 0.10, "MKUPF_LipstickScattering": 0.40, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.90, 0.10, 0.10]
+      }
+    },
+    "party": {
+      "name": "Party",
+      "description": "Vibrant metallic purples and pinks",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.50, "MKUPF_BlusherMakeupIntensity": 0.50, "MKUPF_BlusherMakeupRoughness": 0.40,
+        "MKUPC_BlusherMakeupColor": [0.90, 0.40, 0.60],
+        "MKUPF_EyeMakeup": 0.70, "MKUPF_EyeMakeupMetalness": 0.80, "MKUPF_EyeMakeupRoughness": 0.10, "MKUPF_EyeMakeupScattering": 0.40, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.80, 0.40, 0.90],
+        "MKUPC_EyeMakeupSecondaryColor": [0.60, 0.20, 0.70],
+        "MKUPF_FoundationMakeup": 0.60, "MKUPF_FoundationMakeupConcealerIntensity": 0.50, "MKUPF_FoundationMakeupIntensity": 0.70,
+        "MKUPC_FoundationMakeupColor": [0.90, 0.70, 0.60],
+        "MKUPC_ConcealerMakeupColor": [0.95, 0.80, 0.70],
+        "MKUPF_Lipstick": 0.70, "MKUPF_LipstickRoughness": 0.20, "MKUPF_LipstickScattering": 0.30, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.90, 0.20, 0.60]
+      }
+    },
+    "frost": {
+      "name": "Frost",
+      "description": "Icy blues with high metalness",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.20, "MKUPF_BlusherMakeupIntensity": 0.30, "MKUPF_BlusherMakeupRoughness": 0.50,
+        "MKUPC_BlusherMakeupColor": [0.60, 0.70, 0.90],
+        "MKUPF_EyeMakeup": 0.80, "MKUPF_EyeMakeupMetalness": 0.90, "MKUPF_EyeMakeupRoughness": 0.10, "MKUPF_EyeMakeupScattering": 0.20, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.40, 0.60, 0.95],
+        "MKUPC_EyeMakeupSecondaryColor": [0.70, 0.85, 1.00],
+        "MKUPF_Lipstick": 0.60, "MKUPF_LipstickRoughness": 0.10, "MKUPF_LipstickScattering": 0.15, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.50, 0.55, 0.80]
+      }
+    },
+    "ember": {
+      "name": "Ember",
+      "description": "Warm golds and burnt oranges",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.60, "MKUPF_BlusherMakeupIntensity": 0.70, "MKUPF_BlusherMakeupRoughness": 0.40,
+        "MKUPC_BlusherMakeupColor": [0.95, 0.45, 0.20],
+        "MKUPF_EyeMakeup": 0.75, "MKUPF_EyeMakeupMetalness": 0.70, "MKUPF_EyeMakeupRoughness": 0.30, "MKUPF_EyeMakeupScattering": 0.30, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.90, 0.55, 0.10],
+        "MKUPC_EyeMakeupSecondaryColor": [0.80, 0.30, 0.05],
+        "MKUPF_Lipstick": 0.80, "MKUPF_LipstickRoughness": 0.30, "MKUPF_LipstickScattering": 0.25, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.85, 0.25, 0.10]
+      }
+    },
+    "void": {
+      "name": "Void",
+      "description": "Dark gothic with black and deep purple",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0.40, "MKUPF_BlusherMakeupIntensity": 0.50, "MKUPF_BlusherMakeupRoughness": 0.30,
+        "MKUPC_BlusherMakeupColor": [0.30, 0.10, 0.20],
+        "MKUPF_EyeMakeup": 0.95, "MKUPF_EyeMakeupMetalness": 0.30, "MKUPF_EyeMakeupRoughness": 0.20, "MKUPF_EyeMakeupScattering": 0.10, "MKUPF_EyeMakeupTransparency": 0.00,
+        "MKUPC_EyeMakeupPrimaryColor": [0.05, 0.02, 0.10],
+        "MKUPC_EyeMakeupSecondaryColor": [0.20, 0.05, 0.30],
+        "MKUPF_Lipstick": 0.90, "MKUPF_LipstickRoughness": 0.05, "MKUPF_LipstickScattering": 0.10, "MKUPF_LipstickTransparency": 0.00,
+        "MKUPC_LipstickColor": [0.15, 0.02, 0.08]
+      }
+    },
+    "clear": {
+      "name": "Clear All",
+      "description": "Removes all makeup",
+      "commands": {
+        "MKUPF_BlusherMakeup": 0, "MKUPF_BlusherMakeupIntensity": 0, "MKUPF_BlusherMakeupRoughness": 0,
+        "MKUPF_EyeMakeup": 0, "MKUPF_EyeMakeupMetalness": 0, "MKUPF_EyeMakeupRoughness": 0, "MKUPF_EyeMakeupScattering": 0, "MKUPF_EyeMakeupTransparency": 0,
+        "MKUPF_FoundationMakeup": 0, "MKUPF_FoundationMakeupConcealerIntensity": 0, "MKUPF_FoundationMakeupIntensity": 0,
+        "MKUPF_Lipstick": 0, "MKUPF_LipstickRoughness": 0, "MKUPF_LipstickScattering": 0, "MKUPF_LipstickTransparency": 0
+      }
+    }
+  }
+}

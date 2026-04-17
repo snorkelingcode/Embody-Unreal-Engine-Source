@@ -1,0 +1,16 @@
+{
+  "api": "Subtitles",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "SUBT_{On|Off}",
+        "description": "Enables/disables subtitles display in UE",
+        "params": {
+          "value": "string - On or Off"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

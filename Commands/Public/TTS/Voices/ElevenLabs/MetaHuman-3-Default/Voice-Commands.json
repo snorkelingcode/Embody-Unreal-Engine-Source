@@ -1,0 +1,15 @@
+{
+  "api": "Voice - Harry",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "voice": {
+    "name": "Harry",
+    "id": "harry",
+    "voiceId": "FVr8g66ZdLr7fVJct2Dh",
+    "character": "MetaHuman 3 (Default Male)",
+    "isDefault": false
+  },
+  "usage": {
+    "init": "ElevenLabs={apiKey}=FVr8g66ZdLr7fVJct2Dh",
+    "speak": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}"
+  }
+}

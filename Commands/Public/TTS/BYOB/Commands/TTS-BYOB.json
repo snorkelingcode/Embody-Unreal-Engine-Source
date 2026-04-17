@@ -1,0 +1,27 @@
+{
+  "api": "Custom TTS (BYOB)",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "TTS_BYOB_{Path to file}_{Emotion}_{Emotion Intensity}",
+        "description": "Sends a user-provided audio file path to UE for MetaHuman lip-sync playback",
+        "params": {
+          "Path to file": "string - path to the audio file",
+          "Emotion": "string - emotion label (default: Neutral)",
+          "Emotion Intensity": "number - emotion intensity 0.0-1.0 (default: 0.5)"
+        }
+      }
+    ],
+    "GET": [
+      {
+        "command": "TTS_Started",
+        "description": "UE notifies frontend that the avatar has begun speaking"
+      },
+      {
+        "command": "TTS_Complete",
+        "description": "UE notifies frontend that the avatar has finished speaking"
+      }
+    ]
+  }
+}

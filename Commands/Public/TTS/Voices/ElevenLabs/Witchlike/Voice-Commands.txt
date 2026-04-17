@@ -1,0 +1,4 @@
+Witch - Witchlike
+Voice ID: HH3kybY6uEJ2ebSa9Vy3
+Init: ElevenLabs={apiKey}=HH3kybY6uEJ2ebSa9Vy3
+Speak: TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{useEmotion}_{emotion}_{intensity}

@@ -1,0 +1,54 @@
+All eye parameters use format EYE_{param}_{value} - POST
+Slider UI range -100 to 200, value divided by 100 before sending (float range -1.00 to 2.00)
+
+Pupil & Iris Shape (20 params) - POST
+EYE_CloudyIrisHardness_{value} - Cloudy iris edge hardness
+EYE_CloudyIrisRadius_{value} - Cloudy iris radius
+EYE_DistortPanX_{value} - Iris distortion pan X
+EYE_DistortPanY_{value} - Iris distortion pan Y
+EYE_DistortScale_{value} - Iris distortion scale
+EYE_DistortStrength_{value} - Iris distortion strength
+EYE_Iris Concavity Power_{value} - Iris concavity power
+EYE_Iris Concavity Scale_{value} - Iris concavity scale
+EYE_IrisBleedWidth_{value} - Iris bleed width at edges
+EYE_IrisBorderWidth_{value} - Iris border width
+EYE_IrisBrightness_{value} - Iris brightness
+EYE_IrisMaskWidth_{value} - Iris mask width
+EYE_IrisRoughness_{value} - Iris surface roughness
+EYE_IrisSaturation_{value} - Iris color saturation
+EYE_IrisSpecularity_{value} - Iris specular highlight
+EYE_IrisUVRadius_{value} - Iris UV texture radius
+EYE_PupilScale_{value} - Pupil size scale
+EYE_PupilShiftX_{value} - Pupil horizontal shift
+EYE_PupilShiftY_{value} - Pupil vertical shift
+EYE_ScaleIrisWithinMask_{value} - Iris scale within mask
+
+Iris Color (12 params) - POST
+EYE_AOinIris_{value} - Ambient occlusion in iris
+EYE_IrisColor1U_{value} - Primary iris color U coordinate
+EYE_IrisColor1V_{value} - Primary iris color V coordinate
+EYE_IrisColor2U_{value} - Secondary iris color U coordinate
+EYE_IrisColor2V_{value} - Secondary iris color V coordinate
+EYE_IrisColorBalance_{value} - Balance between primary and secondary iris colors
+EYE_IrisColorBalanceSmoothness_{value} - Color balance blend smoothness
+EYE_IrisColorHueVariation_{value} - Iris hue variation amount
+EYE_IrisColorValueVariation_{value} - Iris value/brightness variation
+EYE_IrisSaturationVariation_{value} - Iris saturation variation
+EYE_LimbusDarkAmount_{value} - Dark ring around iris (limbus)
+EYE_RadialStructuralBlendSwitch_{value} - Radial vs structural blend mode
+
+Sclera (11 params) - POST
+EYE_ScleraCornerDarkHardness_{value} - Corner darkening hardness
+EYE_ScleraCornerDarkRadius_{value} - Corner darkening radius
+EYE_ScleraFlattenNormal_{value} - Sclera normal map flattening
+EYE_ScleraPower_{value} - Sclera brightness/power
+EYE_ScleraRotate_{value} - Sclera texture rotation
+EYE_ScleraRoughness_{value} - Sclera surface roughness
+EYE_ScleraSpecularity_{value} - Sclera specular highlight
+EYE_ScleraTintU_{value} - Sclera tint U coordinate
+EYE_ScleraTintV_{value} - Sclera tint V coordinate
+EYE_VeinsPower_{value} - Blood vein visibility
+EYE_VeinsRotate_{value} - Blood vein pattern rotation
+
+43 total eye parameters. Iris color uses UV coordinates on a color lookup texture.
+Presets batch-send all EYE_ commands at once.

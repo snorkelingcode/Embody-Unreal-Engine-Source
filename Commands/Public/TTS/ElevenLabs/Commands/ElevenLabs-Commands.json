@@ -1,0 +1,55 @@
+{
+  "api": "ElevenLabs TTS",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "ElevenLabs={apiKey}={voiceId}",
+        "description": "Sets ElevenLabs API credentials on UE before sending TTS. Sent before each TTS command. For ElevenLabs we use = instead of _ to avoid issues with special chars in API keys",
+        "params": {
+          "apiKey": "string - ElevenLabs API key (from env ELEVENLABS_KEY)",
+          "voiceId": "string - ElevenLabs voice ID (from env ELEVENLABS_VOICE_ID)"
+        }
+      },
+      {
+        "command": "TTS_ElevenLabs_{text}_{stability}_{similarity}_{style}_{speakerBoost}_{modelFlag}_{emotion}_{intensity}",
+        "description": "Sends sanitized text to UE for ElevenLabs TTS synthesis with MetaHuman lip-sync",
+        "params": {
+          "text": "string - sanitized text (no newlines, underscores, or special chars)",
+          "stability": "number - voice stability (default: 0.5)",
+          "similarity": "number - similarity boost (default: 0.75)",
+          "style": "number - style exaggeration (default: 0.0)",
+          "speakerBoost": "number - speaker boost (default: 1.0)",
+          "modelFlag": "number - model selection flag (default: 1)",
+          "emotion": "string - detected emotion label (default: Neutral)",
+          "intensity": "number - emotion intensity 0.0-1.0 (default: 0.5)"
+        },
+        "textSanitization": {
+          "newlines": "replaced with spaces",
+          "underscores": "replaced with spaces",
+          "specialChars": "stripped (only word chars, spaces, .,!?'- kept)",
+          "whitespace": "collapsed to single spaces"
+        },
+        "chunking": {
+          "description": "Long scripts are split into chunks and sent sequentially",
+          "behavior": "Frontend waits for TTS_Complete before sending next chunk",
+          "delayBetweenChunks": "100ms"
+        }
+      }
+    ],
+    "GET": [
+      {
+        "command": "TTS_Started",
+        "description": "UE notifies frontend that the avatar has begun speaking"
+      },
+      {
+        "command": "TTS_Complete",
+        "description": "UE notifies frontend that the avatar has finished speaking. Triggers next chunk if queued."
+      },
+      {
+        "command": "{duration}",
+        "description": "Float representing audio duration in seconds. Fallback timing mechanism if TTS_Started/TTS_Complete not available."
+      }
+    ]
+  }
+}

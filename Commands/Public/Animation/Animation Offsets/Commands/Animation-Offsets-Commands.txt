@@ -1,0 +1,65 @@
+Animation Offsets (MAN_) - POST
+MAN_{bone}_{pitch}_{yaw}_{roll} - Sets a procedural rotation offset on the named bone
+
+Rotation:
+  pitch - X axis rotation (-180 to 180 degrees)
+  yaw   - Y axis rotation (-180 to 180 degrees)
+  roll  - Z axis rotation (-180 to 180 degrees)
+
+Default: MAN_{bone}_0_0_0
+
+Values are additive offsets layered on top of the character's current animation.
+Multi-part bone names (e.g. lowerarm_l) are supported.
+
+Examples:
+  MAN_head_-15.0_20.0_0.0        (head tilted down, turned right)
+  MAN_spine_02_10.0_0.0_5.0      (upper spine leaning forward with slight roll)
+  MAN_upperarm_l_0.0_45.0_0.0    (left arm raised outward)
+  MAN_lowerarm_r_0.0_0.0_30.0    (right forearm rotated)
+  MAN_neck_01_-8.0_0.0_0.0       (neck pitched down slightly)
+
+---
+
+Reset all offsets - POST
+MAN_RESET - Clears all bone rotation offsets simultaneously
+
+Example:
+  MAN_RESET
+
+---
+
+Supported Bones:
+
+Spine
+  pelvis
+  spine_01, spine_02, spine_03, spine_04, spine_05
+
+Neck & Head
+  neck_01, neck_02
+  head
+
+Left Arm
+  clavicle_l, upperarm_l, lowerarm_l, hand_l
+
+Right Arm
+  clavicle_r, upperarm_r, lowerarm_r, hand_r
+
+Left Hand
+  thumb_01_l, thumb_02_l, thumb_03_l
+  index_01_l, index_02_l, index_03_l
+  middle_01_l, middle_02_l, middle_03_l
+  ring_01_l, ring_02_l, ring_03_l
+  pinky_01_l, pinky_02_l, pinky_03_l
+
+Right Hand
+  thumb_01_r, thumb_02_r, thumb_03_r
+  index_01_r, index_02_r, index_03_r
+  middle_01_r, middle_02_r, middle_03_r
+  ring_01_r, ring_02_r, ring_03_r
+  pinky_01_r, pinky_02_r, pinky_03_r
+
+Left Leg
+  thigh_l, calf_l, foot_l, ball_l
+
+Right Leg
+  thigh_r, calf_r, foot_r, ball_r

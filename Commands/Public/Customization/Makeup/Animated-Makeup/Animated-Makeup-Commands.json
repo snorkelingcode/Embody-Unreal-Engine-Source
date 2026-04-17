@@ -1,0 +1,60 @@
+{
+  "api": "Animated Makeup",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Time-based animated makeup effects. Frontend runs a 30fps setInterval loop that sends MKUPF/MKUPC commands with values computed from math functions. Same architecture as animated post processing on the Directors Cut page.",
+  "mechanism": {
+    "frameRate": "30fps (setInterval at 1000/30ms)",
+    "toggle": "Click to start, click again to stop. Only one animation active at a time.",
+    "persistence": "Animation survives page navigation via module-level refs"
+  },
+  "animations": [
+    {
+      "id": "heartbeat",
+      "name": "Heartbeat",
+      "description": "Pulsing red lips and blusher that throb like a heartbeat",
+      "duration": 2,
+      "commands": ["MKUPF_Lipstick", "MKUPF_BlusherMakeup", "MKUPC_LipstickColor"],
+      "update": "sin(t * PI) drives lipstick 0.4-1.0 and blusher 0.3-0.8, lip color shifts red intensity"
+    },
+    {
+      "id": "color-cycle",
+      "name": "Color Cycle",
+      "description": "Eye makeup smoothly rotates through the color spectrum",
+      "duration": 6,
+      "commands": ["MKUPC_EyeMakeupPrimaryColor", "MKUPC_EyeMakeupSecondaryColor"],
+      "update": "RGB phase-shifted sin waves (120 degrees apart) cycle through full spectrum"
+    },
+    {
+      "id": "glow-up",
+      "name": "Glow Up",
+      "description": "Metalness and scattering ramp up then fade in waves",
+      "duration": 4,
+      "commands": ["MKUPF_EyeMakeupMetalness", "MKUPF_EyeMakeupScattering", "MKUPF_LipstickScattering"],
+      "update": "sin(t * PI / 2) drives metalness 0.1-0.95 and scattering 0.1-0.5"
+    },
+    {
+      "id": "mood-ring",
+      "name": "Mood Ring",
+      "description": "Lipstick and eye makeup shift between warm and cool tones",
+      "duration": 8,
+      "commands": ["MKUPC_LipstickColor", "MKUPC_EyeMakeupPrimaryColor"],
+      "update": "Slow oscillation blends warm reds/oranges into cool blues/purples and back"
+    },
+    {
+      "id": "shimmer",
+      "name": "Shimmer",
+      "description": "Rapid metalness flicker on eyes and lips for a sparkle effect",
+      "duration": 3,
+      "commands": ["MKUPF_EyeMakeupMetalness", "MKUPF_LipstickRoughness"],
+      "update": "Random bursts (20% chance per frame) spike metalness to 0.9, otherwise settles at 0.3"
+    },
+    {
+      "id": "bruise",
+      "name": "Bruise",
+      "description": "Dark purple-green color shift on blusher and eye shadow",
+      "duration": 5,
+      "commands": ["MKUPC_BlusherMakeupColor", "MKUPC_EyeMakeupPrimaryColor"],
+      "update": "sin/cos waves shift between deep purple (0.3,0.1,0.4) and sickly green (0.2,0.4,0.1)"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "api": "Clothing Presets",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Each preset batch-sends OF_ commands to equip a full outfit at once. Use the character-specific variant matching the active MetaHuman (e.g., replace {Char} with Lucy, Sarah, Harry, or Zach). Some items are character-restricted.",
+  "presets": {
+    "businessCasual": {
+      "name": "Business Casual",
+      "description": "Professional look with sweater, skirt, and heels",
+      "availability": "Lucy, Sarah (Skirt + Heels required)",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.TurtleNeckSweater",
+        "OF_legs": "OF_Bottoms_{Char}.Skirt",
+        "OF_feet": "OF_Shoes_{Char}.Heels",
+        "OF_back": "OF_Magic_None"
+      },
+      "skin": "OFC_Bottoms_Skirt.NavyLint"
+    },
+    "streetwear": {
+      "name": "Streetwear",
+      "description": "Casual tee with cargo pants and sneakers",
+      "availability": "All characters",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.TShirt",
+        "OF_legs": "OF_Bottoms_{Char}.CargoPant",
+        "OF_feet": "OF_Shoes_{Char}.Sneakers",
+        "OF_back": "OF_Magic_None"
+      },
+      "skin": "OFC_Tops_TShirt.NavyWhiteStripe"
+    },
+    "athletic": {
+      "name": "Athletic",
+      "description": "Sporty vest with shorts and sneakers",
+      "availability": "All characters",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.TripleLayerVest",
+        "OF_legs": "OF_Bottoms_{Char}.Shorts",
+        "OF_feet": "OF_Shoes_{Char}.Sneakers",
+        "OF_back": "OF_Magic_None"
+      }
+    },
+    "summerDress": {
+      "name": "Summer Dress",
+      "description": "Light sleeveless dress with sneakers",
+      "availability": "Lucy, Sarah",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.SleevelessDress",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_{Char}.Sneakers",
+        "OF_back": "OF_Magic_None"
+      },
+      "skin": "OFC_Tops_SleevelessDress.SalmonCotton"
+    },
+    "nightOut": {
+      "name": "Night Out",
+      "description": "Elegant dress with heels and wings",
+      "availability": "Lucy, Sarah",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.SleevelessDress",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_{Char}.Heels",
+        "OF_back": "OF_Magic_Wings"
+      },
+      "skin": "OFC_Tops_SleevelessDress.Phoenix"
+    },
+    "tactical": {
+      "name": "Tactical",
+      "description": "Camo cargo pants with plain tee and sneakers",
+      "availability": "All characters",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.TShirt",
+        "OF_legs": "OF_Bottoms_{Char}.CargoPant",
+        "OF_feet": "OF_Shoes_{Char}.Sneakers",
+        "OF_back": "OF_Magic_None"
+      },
+      "skin": "OFC_Bottoms_CargoPant.FullCamo"
+    },
+    "cyberpunk": {
+      "name": "Cyberpunk",
+      "description": "Carbon fiber dress with wings - futuristic look",
+      "availability": "Lucy, Sarah",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_{Char}.SleevelessDress",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_{Char}.Heels",
+        "OF_back": "OF_Magic_Wings"
+      },
+      "skin": "OFC_Tops_SleevelessDress.CarbonFiber"
+    },
+    "pumpkinWitch": {
+      "name": "Pumpkin Witch",
+      "description": "Halloween costume with wings",
+      "availability": "Lucy only",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_Lucy.PumpkinWitch",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_Lucy.Heels",
+        "OF_back": "OF_Magic_Wings"
+      }
+    },
+    "minimal": {
+      "name": "Minimal",
+      "description": "Just sneakers, no clothing",
+      "availability": "All characters",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_Top_None",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_{Char}.Sneakers",
+        "OF_back": "OF_Magic_None"
+      }
+    },
+    "clear": {
+      "name": "Clear All",
+      "description": "Removes all clothing",
+      "availability": "All characters",
+      "commands": {
+        "OF_head": "OF_Headwear_None",
+        "OF_torso": "OF_Tops_Top_None",
+        "OF_legs": "OF_Bottoms_None",
+        "OF_feet": "OF_Shoes_None",
+        "OF_back": "OF_Magic_None"
+      }
+    }
+  }
+}

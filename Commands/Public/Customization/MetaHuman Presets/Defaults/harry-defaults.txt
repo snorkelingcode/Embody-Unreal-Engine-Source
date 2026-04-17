@@ -1,0 +1,153 @@
+# Harry Default Values
+# Only parameters that have sliders/color pickers in the frontend
+
+## Skin Color
+skinColor: 1.0
+
+## Makeup - Blusher (No makeup for Harry)
+blusherMakeup: 0.0
+blusherIntensity: 0.5
+blusherRoughness: 0.5
+blusherColorR: 0.63
+blusherColorG: 0.015
+blusherColorB: 0.039
+
+## Makeup - Eye (No makeup for Harry)
+eyeMakeup: 0.0
+eyeMakeupMetalness: 0.0
+eyeMakeupRoughness: 0.5
+eyeMakeupScattering: 0.2
+eyeMakeupTransparency: 0.0
+eyeMakeupPrimaryR: 0.102
+eyeMakeupPrimaryG: 0.174
+eyeMakeupPrimaryB: 0.25
+eyeMakeupSecondaryR: 0.1
+eyeMakeupSecondaryG: 0.1
+eyeMakeupSecondaryB: 0.1
+
+## Makeup - Foundation (No makeup for Harry)
+foundationMakeup: 0.0
+foundationConcealer: 0.0
+foundationIntensity: 0.5
+foundationColorR: 0.418
+foundationColorG: 0.191
+foundationColorB: 0.125
+concealerColorR: 0.418
+concealerColorG: 0.191
+concealerColorB: 0.125
+
+## Makeup - Lipstick (No makeup for Harry)
+lipstick: 0.0
+lipstickRoughness: 0.5
+lipstickScattering: 0.175
+lipstickTransparency: 0.0
+lipstickColorR: 0.233
+lipstickColorG: 0.234
+lipstickColorB: 0.221
+
+## Default Outfit
+head:
+torso: Tops_Harry.TShirt
+legs: Bottoms_Harry.CargoPants
+feet: Shoes_Harry.Sneakers
+back:
+
+## Default Hairstyle
+hairstyle: HS_Harry.TwistedBraids
+
+## Default Animations
+defaultAnimation: speakingAnimation
+speakingAnimation: none
+
+###########################################
+
+## Eyes - Pupil & Iris Shape Section
+cloudyIrisHardness: 0.0
+cloudyIrisRadius: 0.13
+distortPanX: 0.0
+distortPanY: 0.0
+distortScale: 5.0
+distortStrength: 0.0
+irisConcavityPower: 0.28
+irisConcavityScale: 0.11
+irisBleedWidth: 0.035
+irisBorderWidth: 0.04
+irisBrightness: 1.0
+irisMaskWidth: 0.045
+irisRoughness: 0.1
+irisSaturation: 0.5
+irisSpecularity: 0.4
+irisUVRadius: 0.5
+pupilScale: 1.0
+pupilShiftX: 0.0
+pupilShiftY: 0.0
+scaleIrisWithinMask: 1.0
+
+## Eyes - Iris Color Section
+aoInIris: 0.7
+irisColor1U: 0.8
+irisColor1V: 0.3
+irisColor2U: 0.5
+irisColor2V: 0.3
+irisColorBalance: 0.5
+irisColorBalanceSmoothness: 0.5
+irisColorHueVariation: 0.1
+irisColorValueVariation: 0.25
+irisSaturationVariation: 0.25
+limbusDarkAmount: 0.5
+radialStructuralBlendSwitch: 0.0
+
+## Eyes - Sclera Section
+scleraCornerDarkHardness: 0.4
+scleraCornerDarkRadius: 0.6
+scleraFlattenNormal: 0.7
+scleraPower: 1.0
+scleraRotate: 0.0
+scleraRoughness: 0.1
+scleraSpecularity: 0.4
+scleraTintU: 0.2
+scleraTintV: 0.2
+veinsPower: 0.5
+veinsRotate: 0.0
+
+###########################################
+
+## Base Hair Properties
+hairMelanin: 1.0
+hairRedness: 0.25
+hairRoughness: 0.37
+hairDesat: 0.1
+
+## Hair Opacity & Specular
+hairOpacityNear: 2.0
+hairOpacityFar: 2.0
+hairSpec0: 0.45
+hairSpec1: 0.75
+
+## Hair Highlights
+hairHighlights: 0.0
+hairHighlightsBlending: 0.5
+hairHighlightsIntensity: 0.5
+hairHighlightsMelanin: 0.2819
+hairHighlightsRedness: 0.25
+hairHighlightsColorR: 1.0
+hairHighlightsColorG: 1.0
+hairHighlightsColorB: 1.0
+
+## Hair Ombre
+hairOmbre: 0.0
+hairOmbreContrast: 0.0
+hairOmbreIntensity: 1.0
+hairOmbreMelanin: 0.2819
+hairOmbreRedness: 0.25
+hairOmbreColorR: 1.0
+hairOmbreColorG: 1.0
+hairOmbreColorB: 1.0
+
+## Hair Color RGB
+hairColorR: 1.0
+hairColorG: 1.0
+hairColorB: 1.0
+
+## Other
+hairScraggle: -0.05

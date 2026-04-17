@@ -1,0 +1,3 @@
+Color Temperature & Tint - POST
+CG_Temp_{value} - Color temperature in Kelvin (1500-15000)
+CG_Tint_{value} - Color tint (-50 to 50, step 1)

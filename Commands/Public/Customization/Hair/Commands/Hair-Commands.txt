@@ -1,0 +1,38 @@
+Hairstyle selection - POST
+HS_{Character}.{Style} - Selects a hairstyle (32 styles per character)
+  Characters: Lucy, Harry, Sarah, Zach
+  Styles: Updo, UpdoBuns, UpdoBraids, LowPonytail, BobSlick, BobMessy, BobStraight, BobBangs, BobLayered, LongStraightBangs, LongStraight, LongMessy, AfroLong, AfroFade, FauxMohawk, Mohawk, Layered, SideSweptFringe, Waves, Buzzcut, Casual, Clean, CoilBuzz, Cornrows, CurlyFade, HairLoss, ShortMessy, Pixie, PulledBack, Recede, SlickBack, SweptUp
+  Examples: HS_Lucy.Updo, HS_Harry.TwistedBraids, HS_Sarah.LongStraight, HS_Zach.MessyShort
+
+Base hair color (HCR/HCG/HCB) - POST
+HCR.{value} - Red channel (0.00-1.00)
+HCG.{value} - Green channel (0.00-1.00)
+HCB.{value} - Blue channel (0.00-1.00)
+
+Float sliders (HAIRF) - POST
+HAIRF_hairMelanin_{value} - Melanin amount (darker pigment)
+HAIRF_hairRedness_{value} - Red pigment amount
+HAIRF_HairRoughness_{value} - Surface roughness
+HAIRF_Desat_{value} - Desaturation amount
+HAIRF_Highlights_{value} - Highlights intensity on/off
+HAIRF_HighlightsBlending_{value} - Highlights blend smoothness
+HAIRF_HighlightsIntensity_{value} - Highlights strength
+HAIRF_HighlightsMelanin_{value} - Highlights melanin
+HAIRF_HighlightsRedness_{value} - Highlights red pigment
+HAIRF_Ombre_{value} - Ombre effect intensity on/off
+HAIRF_OmbreContrast_{value} - Ombre contrast between root and tip
+HAIRF_OmbreIntensity_{value} - Ombre strength
+HAIRF_OmbreMelanin_{value} - Ombre melanin
+HAIRF_OmbreRedness_{value} - Ombre red pigment
+HAIRF_OpacityNear_{value} - Hair opacity up close
+HAIRF_OpacityFar_{value} - Hair opacity at distance
+HAIRF_Spec0_{value} - Primary specular highlight
+HAIRF_Spec1_{value} - Secondary specular highlight
+HAIRF_Scraggle_{value} - Hair scraggle/flyaway amount
+
+Color pickers (HAIRC) - POST
+HAIRC_HighlightshairDye_{r}_{g}_{b} - Highlights dye color
+HAIRC_OmbrehairDye_{r}_{g}_{b} - Ombre dye color
+
+All color values are RGB floats 0.00-1.00.
+Presets (Brunette, Blonde, Redhead, etc.) send all float and color commands at once.

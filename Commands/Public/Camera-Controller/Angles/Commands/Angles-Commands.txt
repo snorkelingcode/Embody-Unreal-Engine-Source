@@ -1,0 +1,10 @@
+Camera angle presets (CAMSHOT) - POST
+CAMSHOT.Default - Default camera position
+CAMSHOT.ExtremeClose - Extreme close-up shot (face detail)
+CAMSHOT.Close - Close-up shot (head and shoulders)
+CAMSHOT.HighAngle - High angle looking down
+CAMSHOT.LowAngle - Low angle looking up
+CAMSHOT.Medium - Medium shot (waist up)
+CAMSHOT.WideShot - Wide shot (full body and environment)
+
+Uses dot separator. Snaps camera instantly to the predefined position.

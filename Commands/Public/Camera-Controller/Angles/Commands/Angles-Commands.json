@@ -1,0 +1,23 @@
+{
+  "api": "Camera Angles",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Preset camera angles that snap to predefined positions. Uses dot separator.",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CAMSHOT.{preset}",
+        "description": "Snaps the camera to a predefined angle/position preset",
+        "presets": {
+          "CAMSHOT.Default": "Default camera position",
+          "CAMSHOT.ExtremeClose": "Extreme close-up shot (face detail)",
+          "CAMSHOT.Close": "Close-up shot (head and shoulders)",
+          "CAMSHOT.HighAngle": "High angle looking down",
+          "CAMSHOT.LowAngle": "Low angle looking up",
+          "CAMSHOT.Medium": "Medium shot (waist up)",
+          "CAMSHOT.WideShot": "Wide shot (full body and environment)"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

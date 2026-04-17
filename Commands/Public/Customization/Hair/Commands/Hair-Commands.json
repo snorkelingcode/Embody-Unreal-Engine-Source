@@ -1,0 +1,80 @@
+{
+  "api": "Hair",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "HS_{Character}.{Style}",
+        "description": "Selects a hairstyle. Each character has 32 available styles.",
+        "params": {
+          "Character": "string - Lucy | Harry | Sarah | Zach",
+          "Style": "string - one of 32 styles (see availableStyles)"
+        },
+        "availableStyles": [
+          "Updo", "UpdoBuns", "UpdoBraids", "LowPonytail",
+          "BobSlick", "BobMessy", "BobStraight", "BobBangs", "BobLayered",
+          "LongStraightBangs", "LongStraight", "LongMessy",
+          "AfroLong", "AfroFade", "FauxMohawk", "Mohawk",
+          "Layered", "SideSweptFringe", "Waves",
+          "Buzzcut", "Casual", "Clean", "CoilBuzz", "Cornrows", "CurlyFade",
+          "HairLoss", "ShortMessy", "Pixie", "PulledBack", "Recede", "SlickBack", "SweptUp"
+        ],
+        "examples": [
+          "HS_Lucy.Updo",
+          "HS_Harry.TwistedBraids",
+          "HS_Sarah.LongStraight",
+          "HS_Zach.MessyShort"
+        ]
+      },
+      {
+        "command": "HCR.{value} / HCG.{value} / HCB.{value}",
+        "description": "Sets base hair color RGB channels individually. Uses dot separator.",
+        "params": {
+          "value": "number - float 0.00 to 1.00"
+        },
+        "variants": {
+          "HCR": "Red channel",
+          "HCG": "Green channel",
+          "HCB": "Blue channel"
+        }
+      },
+      {
+        "command": "HAIRF_{param}_{value}",
+        "description": "Sets a hair float parameter",
+        "params": {
+          "value": "number - float (range varies per param)"
+        },
+        "variants": {
+          "HAIRF_hairMelanin": "Melanin amount (darker pigment)",
+          "HAIRF_hairRedness": "Red pigment amount",
+          "HAIRF_HairRoughness": "Surface roughness",
+          "HAIRF_Desat": "Desaturation amount",
+          "HAIRF_Highlights": "Highlights intensity on/off",
+          "HAIRF_HighlightsBlending": "Highlights blend smoothness",
+          "HAIRF_HighlightsIntensity": "Highlights strength",
+          "HAIRF_HighlightsMelanin": "Highlights melanin",
+          "HAIRF_HighlightsRedness": "Highlights red pigment",
+          "HAIRF_Ombre": "Ombre effect intensity on/off",
+          "HAIRF_OmbreContrast": "Ombre contrast between root and tip",
+          "HAIRF_OmbreIntensity": "Ombre strength",
+          "HAIRF_OmbreMelanin": "Ombre melanin",
+          "HAIRF_OmbreRedness": "Ombre red pigment",
+          "HAIRF_OpacityNear": "Hair opacity up close",
+          "HAIRF_OpacityFar": "Hair opacity at distance",
+          "HAIRF_Spec0": "Primary specular highlight",
+          "HAIRF_Spec1": "Secondary specular highlight",
+          "HAIRF_Scraggle": "Hair scraggle/flyaway amount"
+        }
+      },
+      {
+        "command": "HAIRC_{param}_{r}_{g}_{b}",
+        "description": "Sets a hair color parameter (RGB floats 0.00-1.00)",
+        "variants": {
+          "HAIRC_HighlightshairDye": "Highlights dye color",
+          "HAIRC_OmbrehairDye": "Ombre dye color"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

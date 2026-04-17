@@ -1,0 +1,56 @@
+Each preset sends all MKUPF + MKUPC commands at once to batch-apply a full look. - POST
+
+Natural - Subtle everyday look
+  MKUPF_BlusherMakeup_0.30, MKUPF_BlusherMakeupIntensity_0.20, MKUPF_BlusherMakeupRoughness_0.70
+  MKUPC_BlusherMakeupColor_0.90_0.60_0.50
+  MKUPF_EyeMakeup_0.20, MKUPF_EyeMakeupMetalness_0.10, MKUPF_EyeMakeupRoughness_0.80
+  MKUPC_EyeMakeupPrimaryColor_0.40_0.30_0.20
+  MKUPF_FoundationMakeup_0.40, MKUPF_FoundationMakeupIntensity_0.60
+  MKUPF_Lipstick_0.30, MKUPF_LipstickRoughness_0.40
+  MKUPC_LipstickColor_0.80_0.40_0.40
+
+Dramatic - Bold evening look with deep blues and reds
+  MKUPF_BlusherMakeup_0.70, MKUPF_BlusherMakeupIntensity_0.80
+  MKUPC_BlusherMakeupColor_0.90_0.30_0.30
+  MKUPF_EyeMakeup_0.90, MKUPF_EyeMakeupMetalness_0.60
+  MKUPC_EyeMakeupPrimaryColor_0.10_0.10_0.80
+  MKUPF_Lipstick_0.90, MKUPF_LipstickRoughness_0.10
+  MKUPC_LipstickColor_0.90_0.10_0.10
+
+Party - Vibrant metallic purples and pinks
+  MKUPF_BlusherMakeup_0.50, MKUPF_BlusherMakeupIntensity_0.50
+  MKUPC_BlusherMakeupColor_0.90_0.40_0.60
+  MKUPF_EyeMakeup_0.70, MKUPF_EyeMakeupMetalness_0.80
+  MKUPC_EyeMakeupPrimaryColor_0.80_0.40_0.90
+  MKUPF_Lipstick_0.70, MKUPF_LipstickRoughness_0.20
+  MKUPC_LipstickColor_0.90_0.20_0.60
+
+Frost - Icy blues with high metalness
+  MKUPF_BlusherMakeup_0.20, MKUPF_BlusherMakeupIntensity_0.30
+  MKUPC_BlusherMakeupColor_0.60_0.70_0.90
+  MKUPF_EyeMakeup_0.80, MKUPF_EyeMakeupMetalness_0.90, MKUPF_EyeMakeupRoughness_0.10
+  MKUPC_EyeMakeupPrimaryColor_0.40_0.60_0.95
+  MKUPC_EyeMakeupSecondaryColor_0.70_0.85_1.00
+  MKUPF_Lipstick_0.60, MKUPF_LipstickRoughness_0.10
+  MKUPC_LipstickColor_0.50_0.55_0.80
+
+Ember - Warm golds and burnt oranges
+  MKUPF_BlusherMakeup_0.60, MKUPF_BlusherMakeupIntensity_0.70
+  MKUPC_BlusherMakeupColor_0.95_0.45_0.20
+  MKUPF_EyeMakeup_0.75, MKUPF_EyeMakeupMetalness_0.70, MKUPF_EyeMakeupScattering_0.30
+  MKUPC_EyeMakeupPrimaryColor_0.90_0.55_0.10
+  MKUPC_EyeMakeupSecondaryColor_0.80_0.30_0.05
+  MKUPF_Lipstick_0.80, MKUPF_LipstickRoughness_0.30
+  MKUPC_LipstickColor_0.85_0.25_0.10
+
+Void - Dark gothic with black and deep purple
+  MKUPF_BlusherMakeup_0.40, MKUPF_BlusherMakeupIntensity_0.50
+  MKUPC_BlusherMakeupColor_0.30_0.10_0.20
+  MKUPF_EyeMakeup_0.95, MKUPF_EyeMakeupMetalness_0.30, MKUPF_EyeMakeupRoughness_0.20
+  MKUPC_EyeMakeupPrimaryColor_0.05_0.02_0.10
+  MKUPC_EyeMakeupSecondaryColor_0.20_0.05_0.30
+  MKUPF_Lipstick_0.90, MKUPF_LipstickRoughness_0.05
+  MKUPC_LipstickColor_0.15_0.02_0.08
+
+Clear All - Removes all makeup
+  All MKUPF values set to 0.00

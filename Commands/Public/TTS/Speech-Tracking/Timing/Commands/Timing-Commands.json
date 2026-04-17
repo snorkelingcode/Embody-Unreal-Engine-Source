@@ -1,0 +1,31 @@
+{
+  "api": "Speech Timing",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [],
+    "GET": [
+      {
+        "command": "TTS_Started",
+        "description": "UE notifies frontend that the avatar has begun speaking",
+        "frontendBehavior": "Sets isSpeaking = true, shows LIVE indicator, disables Speak button"
+      },
+      {
+        "command": "TTS_Complete",
+        "description": "UE notifies frontend that the avatar has finished speaking",
+        "frontendBehavior": "Sets isSpeaking = false, triggers next chunk after 100ms delay if in chunk queue mode"
+      },
+      {
+        "command": "{duration}",
+        "description": "Float representing audio duration in seconds, used as fallback timing mechanism",
+        "example": "2.347",
+        "frontendBehavior": "Parses float, waits duration * 1000 ms, then processes next chunk. Only active during chunk mode."
+      }
+    ]
+  },
+  "chunkSequencing": {
+    "primarySignal": "TTS_Complete",
+    "fallbackSignal": "{duration} float",
+    "delayBetweenChunks": "100ms",
+    "description": "Frontend sends TTS commands one chunk at a time, waiting for TTS_Complete (or duration fallback) before sending the next"
+  }
+}

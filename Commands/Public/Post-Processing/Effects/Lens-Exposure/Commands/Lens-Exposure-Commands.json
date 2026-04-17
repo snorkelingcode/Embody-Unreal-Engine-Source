@@ -1,0 +1,49 @@
+{
+  "api": "Lens Exposure",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "CGG_LenseExpo_HighlightContrast_{value}",
+        "description": "Lens exposure highlight contrast",
+        "params": { "value": "number - float 0 to 2, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_ShadowContrast_{value}",
+        "description": "Lens exposure shadow contrast",
+        "params": { "value": "number - float 0 to 2, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_HighlightThreshold_{value}",
+        "description": "Lens exposure highlight threshold",
+        "params": { "value": "number - float 0 to 2, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_ShadowThreshold_{value}",
+        "description": "Lens exposure shadow threshold",
+        "params": { "value": "number - float 0 to 2, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_DetailStrength_{value}",
+        "description": "Lens exposure detail strength",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_BlurredLumiBlend_{value}",
+        "description": "Lens exposure blurred luminance blend",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      },
+      {
+        "command": "CGG_LenseExpo_KernalSize_{value}",
+        "description": "Lens exposure kernel size",
+        "params": { "value": "number - integer 0 to 10, step 1" }
+      },
+      {
+        "command": "CGG_LenseExpo_GreyBias_{value}",
+        "description": "Lens exposure grey bias",
+        "params": { "value": "number - float 0 to 1, step 0.01" }
+      }
+    ],
+    "GET": []
+  }
+}

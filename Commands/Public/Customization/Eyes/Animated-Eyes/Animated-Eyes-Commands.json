@@ -1,0 +1,60 @@
+{
+  "api": "Animated Eyes",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "Time-based animated eye effects. Frontend runs a 30fps setInterval loop that sends EYE_ commands with values computed from math functions. Same architecture as animated post processing on the Directors Cut page, animated makeup, and animated hair.",
+  "mechanism": {
+    "frameRate": "30fps (setInterval at 1000/30ms)",
+    "toggle": "Click to start, click again to stop. Only one animation active at a time.",
+    "persistence": "Animation survives page navigation via module-level refs"
+  },
+  "animations": [
+    {
+      "id": "dilate",
+      "name": "Dilate",
+      "description": "Pupil scale oscillates between constricted and dilated, simulating light adaptation",
+      "duration": 4,
+      "commands": ["EYE_PupilScale"],
+      "update": "sin(t * PI / 2) drives PupilScale between 0.70 (constricted) and 1.30 (dilated)"
+    },
+    {
+      "id": "hypnotic",
+      "name": "Hypnotic",
+      "description": "Iris color UV coordinates slowly rotate through the color lookup texture",
+      "duration": 10,
+      "commands": ["EYE_IrisColor1U", "EYE_IrisColor1V", "EYE_IrisColor2U", "EYE_IrisColor2V"],
+      "update": "sin/cos waves drive IrisColor1U/V and IrisColor2U/V in circular paths through the UV space, creating a smooth color shift"
+    },
+    {
+      "id": "glint",
+      "name": "Glint",
+      "description": "Iris brightness and specularity pulse for a sparkling, alive look",
+      "duration": 3,
+      "commands": ["EYE_IrisBrightness", "EYE_IrisSpecularity", "EYE_ScleraSpecularity"],
+      "update": "sin(t * PI) drives IrisBrightness 0.80-1.40, IrisSpecularity 0.30-0.70, ScleraSpecularity 0.30-0.60"
+    },
+    {
+      "id": "bloodflow",
+      "name": "Blood Flow",
+      "description": "Vein power and sclera tint fluctuate to simulate pulsing blood vessels",
+      "duration": 5,
+      "commands": ["EYE_VeinsPower", "EYE_ScleraTintU", "EYE_ScleraTintV", "EYE_ScleraCornerDarkRadius"],
+      "update": "sin(t * PI / 2.5) drives VeinsPower 0.20-0.85, ScleraTintU/V shift 0.18-0.35 for reddening effect"
+    },
+    {
+      "id": "morph",
+      "name": "Morph",
+      "description": "Iris distortion parameters oscillate for a warping, otherworldly effect",
+      "duration": 6,
+      "commands": ["EYE_DistortStrength", "EYE_DistortScale", "EYE_DistortPanX", "EYE_DistortPanY"],
+      "update": "sin/cos waves drive DistortStrength 0.00-0.30, DistortScale 3.0-7.0, Pan X/Y drift in circular pattern"
+    },
+    {
+      "id": "stare",
+      "name": "Stare",
+      "description": "Slow pupil dilation with increasing sclera darkness for an intense, unsettling gaze",
+      "duration": 8,
+      "commands": ["EYE_PupilScale", "EYE_ScleraCornerDarkHardness", "EYE_ScleraCornerDarkRadius", "EYE_IrisBrightness"],
+      "update": "Ramp up PupilScale 1.0-1.40, ScleraCornerDarkRadius 0.5-0.85, then snap back. IrisBrightness dims 1.0-0.7 during ramp"
+    }
+  ]
+}

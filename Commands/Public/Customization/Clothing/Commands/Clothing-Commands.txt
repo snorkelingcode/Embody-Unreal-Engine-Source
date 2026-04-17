@@ -1,0 +1,63 @@
+Outfit selection (OF_) - POST
+OF_{clothingValue} - Equips a clothing item to its slot
+  5 slots: head, torso, legs, feet, back
+  Items are character-specific (Lucy, Sarah, Harry, Zach)
+  Examples: OF_Tops_Lucy.TurtleNeckSweater, OF_Bottoms_Harry.CargoPant, OF_Shoes_Zach.Sneakers
+
+Head slot:
+  Headwear_None
+
+Torso slot:
+  SleevelessDress - Tops_Lucy.SleevelessDress, Tops_Sarah.SleevelessDress
+  TurtleNeckSweater - Tops_Lucy.TurtleNeckSweater, Tops_Sarah.TurtleNeckSweater, Tops_Harry.TurtleNeckSweater
+  TShirt - Tops_Lucy.TShirt, Tops_Sarah.TShirt, Tops_Harry.TShirt, Tops_Zach.TShirt
+  TripleLayerVest - Tops_Lucy.TripleLayerVest, Tops_Sarah.TripleLayerVest, Tops_Harry.TripleLayerVest, Tops_Zach.TripleLayerVest
+  EmbodyPuffer - Tops_Lucy.EmbodyPuffer (Lucy only)
+  LivepeerOutfit - Tops_Lucy.LivepeerOutfit (Lucy only)
+  PumpkinWitch - Tops_Lucy.PumpkinWitch (Lucy only)
+
+Legs slot:
+  Bottoms_None
+  Skirt - Bottoms_Lucy.Skirt, Bottoms_Sarah.Skirt
+  CargoPant - Bottoms_Lucy.CargoPant, Bottoms_Sarah.CargoPant, Bottoms_Harry.CargoPant, Bottoms_Zach.CargoPant
+  Shorts - Bottoms_Lucy.Shorts, Bottoms_Sarah.Shorts, Bottoms_Harry.Shorts, Bottoms_Zach.Shorts
+  AthleticShortsF - Bottoms_Lucy.AthleticShortsF, Bottoms_Sarah.AthleticShortsF
+
+Feet slot:
+  Shoes_None
+  Sneakers - Shoes_Lucy.Sneakers, Shoes_Sarah.Sneakers, Shoes_Harry.Sneakers, Shoes_Zach.Sneakers
+  Heels - Shoes_Lucy.Heels, Shoes_Sarah.Heels
+
+Back slot:
+  Magic_None
+  Magic_Wings
+
+Auto-pairing: selecting a top automatically sets matching bottoms:
+  SleevelessDress -> Bottoms_None (dress covers legs)
+  TurtleNeckSweater -> Skirt
+  TShirt -> CargoPant
+  TripleLayerVest -> Shorts
+
+Clothing skins (OFC_) - POST
+OFC_{category}_{type}.{texture} - Applies a texture skin to the current clothing
+  Only supported on: SleevelessDress (20 skins), TShirt (16 skins), CargoPant (16 skins), Skirt (5 skins)
+  Examples: OFC_Tops_SleevelessDress.Phoenix, OFC_Bottoms_CargoPant.PinkCamo
+
+SleevelessDress skins (20):
+  Default, BeigeWoven, BlueClouds, BWFerro, BWShred, BWStudded, CarbonFiber, GreenGrid, GreenNet, GreenSquared, GreyFeathers, GreyFelt, LinenBeige, Phoenix, Polkadot, RedNylon, RipstopFloral, RoyalGreen, RoyalPink, SalmonCotton
+
+TShirt skins (16):
+  Default, BeigeWash, NavyWhiteStripe, PinkCamo, PinkHexLogo, Starlight, ShadedSquare, RWFlannel, GreyLogo, Grey, GreenStripeLogo, GreenStripe, BlueDiamond, BlackLogo, PlainWhiteLogo, PlainWhite
+
+CargoPant skins (16):
+  Default, AfghanCamo, BWCamo, BWHex, CaddyFlannel, Dart, FullCamo, PinkCamo, PinkHearts, PinkPlad, RBFlannel, RWFlannel, WHex, WhiteoutHex, WOHex, YellowThread
+
+Skirt skins (5):
+  Default, Tiger, NavyLint, BlueFloral, RedFloral
+
+Custom UV map textures (OFCD_) - POST
+OFCD_{objectType}_{url} - Applies a custom UV map texture from a public URL to clothing
+  Currently supported: OFCD_Legs_{url} (Skirt UV map)
+  URL must be publicly accessible (HTTPS, e.g., ImgBB hosted)
+  Created via AI generation (Stability AI / Gemini) or freehand doodle on the Custom Materials page
+  Example: OFCD_Legs_https://i.ibb.co/example/custom-skirt-texture.png

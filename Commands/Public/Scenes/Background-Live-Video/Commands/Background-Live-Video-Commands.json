@@ -1,0 +1,25 @@
+{
+  "api": "Background Live Video",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "m3u8_Plane_{url}",
+        "description": "Stream live .m3u8 video to a spawned Live.Plane object in the 3D scene",
+        "params": { "url": "string - .m3u8 HLS stream URL" }
+      },
+      {
+        "command": "m3u8_UI_{url}",
+        "description": "Stream live .m3u8 video as a UI overlay (2D screen overlay)",
+        "params": { "url": "string - .m3u8 HLS stream URL" }
+      }
+    ],
+    "GET": []
+  },
+  "notes": {
+    "target_modes": {
+      "Plane": "Renders video onto a Live.Plane object in 3D space",
+      "UI": "Renders video as a 2D UI overlay on screen"
+    }
+  }
+}

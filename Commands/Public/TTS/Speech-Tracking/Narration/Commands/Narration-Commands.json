@@ -1,0 +1,16 @@
+{
+  "api": "Narration",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "NAR_{On|Off}",
+        "description": "Enables/disables lip sync on the MetaHuman, creating a narrator effect where TTS audio plays without avatar mouth movement",
+        "params": {
+          "value": "string - On or Off"
+        }
+      }
+    ],
+    "GET": []
+  }
+}

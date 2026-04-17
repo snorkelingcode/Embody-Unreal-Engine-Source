@@ -1,0 +1,68 @@
+{
+  "api": "Eyes",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "description": "All eye parameters use a single command format. Slider UI range is -100 to 200, value is divided by 100 before sending (float range -1.00 to 2.00).",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "EYE_{param}_{value}",
+        "description": "Sets an eye parameter. 43 total parameters across 3 sections.",
+        "params": {
+          "value": "number - float (slider range -1.00 to 2.00)"
+        },
+        "sections": {
+          "Pupil & Iris Shape": {
+            "EYE_CloudyIrisHardness": "Cloudy iris edge hardness",
+            "EYE_CloudyIrisRadius": "Cloudy iris radius",
+            "EYE_DistortPanX": "Iris distortion pan X",
+            "EYE_DistortPanY": "Iris distortion pan Y",
+            "EYE_DistortScale": "Iris distortion scale",
+            "EYE_DistortStrength": "Iris distortion strength",
+            "EYE_Iris Concavity Power": "Iris concavity power",
+            "EYE_Iris Concavity Scale": "Iris concavity scale",
+            "EYE_IrisBleedWidth": "Iris bleed width at edges",
+            "EYE_IrisBorderWidth": "Iris border width",
+            "EYE_IrisBrightness": "Iris brightness",
+            "EYE_IrisMaskWidth": "Iris mask width",
+            "EYE_IrisRoughness": "Iris surface roughness",
+            "EYE_IrisSaturation": "Iris color saturation",
+            "EYE_IrisSpecularity": "Iris specular highlight",
+            "EYE_IrisUVRadius": "Iris UV texture radius",
+            "EYE_PupilScale": "Pupil size scale",
+            "EYE_PupilShiftX": "Pupil horizontal shift",
+            "EYE_PupilShiftY": "Pupil vertical shift",
+            "EYE_ScaleIrisWithinMask": "Iris scale within mask"
+          },
+          "Iris Color": {
+            "EYE_AOinIris": "Ambient occlusion in iris",
+            "EYE_IrisColor1U": "Primary iris color U coordinate",
+            "EYE_IrisColor1V": "Primary iris color V coordinate",
+            "EYE_IrisColor2U": "Secondary iris color U coordinate",
+            "EYE_IrisColor2V": "Secondary iris color V coordinate",
+            "EYE_IrisColorBalance": "Balance between primary and secondary iris colors",
+            "EYE_IrisColorBalanceSmoothness": "Color balance blend smoothness",
+            "EYE_IrisColorHueVariation": "Iris hue variation amount",
+            "EYE_IrisColorValueVariation": "Iris value/brightness variation",
+            "EYE_IrisSaturationVariation": "Iris saturation variation",
+            "EYE_LimbusDarkAmount": "Dark ring around iris (limbus)",
+            "EYE_RadialStructuralBlendSwitch": "Radial vs structural blend mode"
+          },
+          "Sclera": {
+            "EYE_ScleraCornerDarkHardness": "Corner darkening hardness",
+            "EYE_ScleraCornerDarkRadius": "Corner darkening radius",
+            "EYE_ScleraFlattenNormal": "Sclera normal map flattening",
+            "EYE_ScleraPower": "Sclera brightness/power",
+            "EYE_ScleraRotate": "Sclera texture rotation",
+            "EYE_ScleraRoughness": "Sclera surface roughness",
+            "EYE_ScleraSpecularity": "Sclera specular highlight",
+            "EYE_ScleraTintU": "Sclera tint U coordinate",
+            "EYE_ScleraTintV": "Sclera tint V coordinate",
+            "EYE_VeinsPower": "Blood vein visibility",
+            "EYE_VeinsRotate": "Blood vein pattern rotation"
+          }
+        }
+      }
+    ],
+    "GET": []
+  }
+}

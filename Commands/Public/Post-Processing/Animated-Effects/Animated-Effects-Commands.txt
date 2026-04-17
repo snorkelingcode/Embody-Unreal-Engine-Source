@@ -1,0 +1,42 @@
+Animated Post-Processing Effects
+Mechanism: 30fps setInterval loop with sin/cos/random math driving post-processing commands.
+
+Pulse (3s loop)
+  Commands: CGG_Global_Saturation, BloomInt
+  Rhythmic saturation and bloom pulses
+
+Day to Night (10s loop)
+  Commands: CG_Temp, EXPO_Comp
+  Smooth transition from warm day (4500K) to cool night (8000K)
+
+Cyberpunk Glitch (5s loop)
+  Commands: CHROME_Int, BloomInt, CGG_Global_Saturation
+  Digital distortion with random chromatic aberration spikes
+
+Dream Sequence (8s loop)
+  Commands: BloomInt, GRAIN_GrainInten, CGG_Global_Saturation
+  Soft ethereal waves with bloom and grain
+
+Neon Nights (6s loop)
+  Commands: CGG_Highlights_Gain, BloomInt
+  Vibrant RGB color cycling on highlights with pulsing bloom
+
+Underwater (7s loop)
+  Commands: CHROME_Int, CG_Temp, CG_Tint, CGG_Global_Gain
+  Blue-green tint with chromatic distortion waves
+
+Fever Dream (5s loop)
+  Commands: CG_Temp, CGG_Global_Saturation, GRAIN_GrainInten
+  Unsettling chaotic color and temperature shifts
+
+Strobe Effect (2s loop)
+  Commands: BloomInt, EXPO_Comp
+  Rapid flickering between bright and dark at 10Hz
+
+Color Shift (12s loop)
+  Commands: CGG_Global_Gain
+  Smooth hue rotation through the spectrum via RGB gain cycling
+
+Breathing (6s loop)
+  Commands: EXPO_Comp, VIG, BloomInt
+  Slow expansion and contraction of exposure, vignette, and bloom

@@ -1,0 +1,185 @@
+{
+  "api": "Build Your Own World",
+  "transport": "Pixel Streaming DataChannel (WebRTC)",
+  "endpoints": {
+    "POST": [
+      {
+        "command": "SPWN_{tag}_{Category.Object}_{x}_{y}_{z}_{rotX}_{rotY}_{rotZ}_{scaleX}_{scaleY}_{scaleZ}",
+        "description": "Spawn a 3D object into the scene with full transform",
+        "params": {
+          "tag": "string - unique identifier for this object instance (no underscores allowed)",
+          "Category.Object": "string - object type from the spawnable catalog (e.g. Furnish.BenchChair)",
+          "x": "number - position X",
+          "y": "number - position Y",
+          "z": "number - position Z",
+          "rotX": "number - rotation X (degrees)",
+          "rotY": "number - rotation Y (degrees)",
+          "rotZ": "number - rotation Z (degrees)",
+          "scaleX": "number - scale X",
+          "scaleY": "number - scale Y",
+          "scaleZ": "number - scale Z"
+        }
+      },
+      {
+        "command": "SPWNMOVE_{tag}_{x}_{y}_{z}_{rotX}_{rotY}_{rotZ}_{scaleX}_{scaleY}_{scaleZ}",
+        "description": "Move/transform an existing spawned object by its tag",
+        "params": {
+          "tag": "string - unique tag of the spawned object",
+          "x": "number - new position X",
+          "y": "number - new position Y",
+          "z": "number - new position Z",
+          "rotX": "number - new rotation X (degrees)",
+          "rotY": "number - new rotation Y (degrees)",
+          "rotZ": "number - new rotation Z (degrees)",
+          "scaleX": "number - new scale X",
+          "scaleY": "number - new scale Y",
+          "scaleZ": "number - new scale Z"
+        }
+      },
+      {
+        "command": "SPWNDEL_{tag}",
+        "description": "Delete a specific spawned object by its tag",
+        "params": { "tag": "string - unique tag of the object to delete" }
+      },
+      {
+        "command": "SPWND",
+        "description": "Delete ALL spawned objects from the scene",
+        "params": {}
+      }
+    ],
+    "GET": []
+  },
+  "procedural_rock": {
+    "description": "Procedural rock generation commands for Procedural.Rock objects. After spawning a Procedural.Rock, configure its base mesh and foliage layers.",
+    "commands": [
+      {
+        "command": "PROCM_{tag}_{meshName}",
+        "description": "Set base mesh for procedural rock",
+        "options": ["ForestRock1", "ForestRock2", "ForestRock3", "ForestRock4", "ForestRock5", "ForestRock6", "ForestRock7", "ForestRock8", "ForestRock9", "ForestRock10"]
+      },
+      {
+        "command": "PROCG_{tag}_{meshName}",
+        "description": "Set grass mesh type (lowercase)",
+        "options": ["Grass1", "Grass2", "Grass3"]
+      },
+      {
+        "command": "PROCGD_{tag}_{value}",
+        "description": "Set grass density",
+        "params": "float 0.01 to 1, step 0.01"
+      },
+      {
+        "command": "PROCGZ_{tag}_{value}",
+        "description": "Set grass Z offset",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCM_{tag}_Ferns_Mesh_{meshName}",
+        "description": "Set ferns mesh type",
+        "options": ["Fern1", "Fern2"]
+      },
+      {
+        "command": "PROCFD_{tag}_{value}",
+        "description": "Set ferns density",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCFZ_{tag}_{value}",
+        "description": "Set ferns Z offset",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCR_{tag}_{meshName}",
+        "description": "Set rocks mesh type (river rocks)",
+        "options": ["RiverRock1", "RiverRock2", "RiverRock3", "RiverRockGroup"]
+      },
+      {
+        "command": "PROCRD_{tag}_{value}",
+        "description": "Set rocks density",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCRZ_{tag}_{value}",
+        "description": "Set rocks Z offset",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCP_{tag}_{meshName}",
+        "description": "Set pebbles mesh type",
+        "options": ["Pebbles1", "Pebbles2"]
+      },
+      {
+        "command": "PROCPD_{tag}_{value}",
+        "description": "Set pebbles density",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCPZ_{tag}_{value}",
+        "description": "Set pebbles Z offset",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCL_{tag}_{meshName}",
+        "description": "Set logs mesh type",
+        "options": ["Log1", "Log2", "Log3", "Log4", "Log5", "Log6"]
+      },
+      {
+        "command": "PROCLD_{tag}_{value}",
+        "description": "Set logs density",
+        "params": "float 0 to 1, step 0.01"
+      },
+      {
+        "command": "PROCLZ_{tag}_{value}",
+        "description": "Set logs Z offset",
+        "params": "float 0 to 1, step 0.01"
+      }
+    ]
+  },
+  "spawnable_catalog": {
+    "AC": ["Duct"],
+    "Bathroom": ["Sinks", "Toilet", "HandDryer", "StallDoor", "Stall1", "Stall2"],
+    "Beverage": ["Beer", "CoffeeBox", "EnergyDrink", "Juice", "MilkBox", "MilkJug", "Soda", "Wine"],
+    "Burn": ["Pipe", "Well"],
+    "CAVE": ["Arch1", "Pillar1", "Wall1", "Wall2", "BasaltThick", "BasaltFloorCircle", "FloorHole", "FloorSqaure", "FloorSquare2", "Sapling1", "Sapling2", "Sapling3", "Cliff", "Cliff2", "Cliff3", "Cliff4", "Cliff5", "Cliff6", "Stairway1", "Pillar2", "Pillar3", "Railing", "Railing2"],
+    "Closet": ["Dresser1", "Dresser2", "Dresser3", "Dresser4", "Dresser5", "Dresser6"],
+    "Clothing": ["Bag1", "Bag2", "CaseBag", "Backpack", "Towel1", "Towel2", "Towel3", "Hanger1", "Hanger2", "Rack", "UnderShirt", "Blouse", "Hoodie", "Tshirt1", "Tshirt2", "Dress", "Dress2", "Cardigan"],
+    "Doors": ["WoodenDoor1", "PlasticDoor1", "WoodenDoorFrame", "DoubleDoorFrame3"],
+    "Floor": ["Dirt"],
+    "Flooring": ["Floor1"],
+    "Floors": ["Floor1"],
+    "Food": ["RedApple", "YellowApple", "GreenApple", "Avocado", "Baguette", "PackedBaguette", "Bannana", "Bread", "Bread2", "Bubblegum", "Butter", "CanBeef", "CanFood", "CanVegi", "CandyBar", "Carrot", "Cheese", "CheesePackaged", "Chips", "ChocolateBar", "Corn", "CornFlakes", "Crackers", "Cucumber", "Curd", "Eggs", "Fish", "FilletFish", "FlourBox", "Garlic", "IceCream", "JamRed", "JamYellow", "KetchupPacket", "Lemon", "Lime", "MeatSlab", "BeefFillet", "LargeBeefFillet", "CupNoodle", "Onion", "Orange", "BeefPatty", "PeanutButter", "Pear", "Pepper", "Pumpkin", "Rice", "Salt", "SugarBox", "Tea", "Tomato"],
+    "Furnish": ["Chair1", "BenchChair", "Chair3", "WoodenShelvings1", "Table1", "Table2", "Container", "Watercooler", "Kettle", "CoffeeMachine", "CoffeeKettle", "KitchenLamp", "Microwave", "Tray", "PendantBench", "Refrigerator1", "Refrigerator2", "Refrigerator3", "Mirror", "RestroomDresser", "Shelf", "Locker", "Cubby", "CubbyDoor1", "WoodShelvings2"],
+    "HOLIDAY": ["PumpkinBlowupGate", "CreepyMonkey", "SpookyDecor", "SpookyPumpkin", "Skeleton", "CardboardCastle", "EvilGhost", "CatDecor"],
+    "Infrastructure": ["Road"],
+    "LIGHT": ["Volume"],
+    "Lighting": ["Lamp7", "Lamp3", "Lamp2", "WallLamp"],
+    "Live": ["Plane"],
+    "MAGIC": ["Portal1", "Portal2", "Portal3", "Portal4", "Portal5", "Portal6", "Portal7", "Portal8", "Portal9", "Portal10"],
+    "Meta": ["Sarah", "Harry", "Zach", "Lucy"],
+    "Outdoor": ["Fern", "Rock1", "Rock2"],
+    "Planters": ["Planter", "Planter2", "Planter3", "Planter5", "Planter6", "Planter7", "Planter9", "Planter10", "Pot12"],
+    "Plants": ["Pot1", "Pot2", "Pot3", "Pot4", "Pot5", "Pot6", "Pot7", "Pot8", "Pot9", "Pot10", "Pot11", "Pot13", "Pot14", "Pot15", "Tree1", "Tree2", "Tree3", "Tree4"],
+    "Procedural": ["Rock"],
+    "School": ["Map", "Clock", "Carton1", "CoffeeMaker", "Book1", "Book2", "Book3", "Book4", "Book5", "Book6", "Bin", "NewtonToy", "PaperHolder", "Binder", "Calculator", "PaperHolder2", "StudentChair", "StudentDesk", "TeachersDesk", "Computer", "CalculatorCase", "Projector", "Backpack1", "Backpack2", "Backpack3", "Carton", "HangingLetters", "Plant", "Trashbin", "RedLamp", "Magazine", "SpiderTank", "RedLamp2", "WallboardGreen", "WallboardBlack", "FireAlarm", "FireBell", "Vent", "VolcanoProject", "Trophy", "ePencilSharpener", "PencilSharpener", "RubrikCube", "PlasticBin", "Chalkboard", "AdjustableTVCart", "OrangeFlag", "FilingCabinet", "SmallWallPoster", "WallboardBlue", "Shelf", "WallConstellations_01a", "WallConstellations_01b", "WallConstellations_01c", "WallConstellations_01d", "WallConstellations_01e", "WallConstellations_01f", "WallConstellations_01g", "WallConstellations_01h"],
+    "Scifi": ["Door", "Wall", "Floor", "Wedge", "CornerWedge", "Lamp", "SpaceSuit"],
+    "Sim": ["Token"],
+    "Store": ["FireExtinguisher", "FireExtinguisherDoor", "FireExtinguisherHousing", "Tube1", "Tube2", "Cable"],
+    "Stool": ["Stool"],
+    "Tech": ["ComputerScreen", "ComputerKeyboard", "ComputerMouse", "MountedTV", "CCTV"],
+    "Travel": ["Suitcase1", "Suitcase2"],
+    "Trash": ["TrashBin", "BigTrashCan"],
+    "Utilities": ["LightSwitch", "PowerOutlet"],
+    "VTuber": ["VTuber_Desk", "VTuber_Chair", "VTuber_Monitor", "VTuber_RingLight", "VTuber_Microphone", "VTuber_Backdrop"],
+    "Walls": ["Wall1", "Wall2"],
+    "Water": ["River", "Lake"]
+  },
+  "notes": {
+    "tag_rules": "Tags must be unique per object. No underscores allowed in tags (underscores are delimiters in the command protocol).",
+    "auto_increment": "Frontend auto-increments numeric suffixes on tags for convenience.",
+    "special_objects": {
+      "Live.Plane": "Spawns with default rotZ=180, scale=0.8. Supports BACK_ and m3u8_ commands for image/video backgrounds.",
+      "LIGHT.Volume": "Spawns a volumetric light. Supports LIGHTC_ and LIGHTI_ commands for color and intensity.",
+      "Procedural.Rock": "Spawns a procedural rock with configurable foliage layers. Uses PROC* commands.",
+      "Meta.*": "Spawns additional MetaHuman characters (Sarah, Harry, Zach, Lucy)."
+    }
+  }
+}
