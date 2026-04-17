@@ -1,10 +1,10 @@
 # Embody
 
-Unreal Engine 5 is one of the most powerful rendering engines ever built. It's also notoriously hard to work with — a steep editor, a complex build pipeline, and a high barrier to entry for anyone who isn't a game developer.
+Unreal Engine 5 is one of the most powerful rendering engines ever built, however it's also notoriously hard to work with. A feature rich editor, complex build pipelines, and a high barrier to entry for anyone who isn't a game developer or animator.
 
-Embody removes that barrier. It's a UE5 module + tooling layer that lets you build production applications on top of Unreal Engine without touching the editor. You download a pre-packaged game build, connect to it over WebRTC or TCP, and control everything — characters, cameras, lighting, animations, post-processing, voice — through string commands. The heavy UE plumbing is already done. You just build on top of it.
+Embody removes that barrier. It's a UE5 module + tooling layer that lets you build production applications on top of Unreal Engine without touching the editor. You download a pre-packaged game build, connect to it over WebRTC or TCP, and control everything. The characters, cameras, lighting, animations, post-processing, audio, and more. The heavy UE plumbing is already done. You just build on top of it.
 
-The example apps in this repo show what's possible out of the box. But the real value is that the same primitives that power them are available to anyone: a web app, a Python script, a Node server, a mobile app, a Unity frontend — anything that can open a WebSocket can drive a photorealistic UE5 character in real time.
+The example apps in this repo show what's possible out of the box. But the real value is that the same primitives that power them are available to anyone: a web app, a Python script, a Node server, a mobile app, a Unity frontend pretty much anything that can open a WebSocket can drive a photorealistic UE5 character in real time.
 
 ---
 
@@ -16,7 +16,7 @@ The example apps in this repo show what's possible out of the box. But the real 
 - **Training simulation** — put a responsive character in any scenario without scripting custom UE Blueprint logic
 - **Live streamer avatar** — run the game headless on a server, stream it into any front-end
 
-None of these require opening Unreal Engine or writing a line of C++ or Blueprint.
+None of these require opening Unreal Engine's editor or writing a line of C++ or Blueprint.
 
 ---
 
@@ -102,11 +102,11 @@ The full command reference is in [`Commands/`](Commands/).
 
 ### [Embody Animation Offset Studio](Example%20Apps/Embody-Animation-Offset-Studio)
 
-Control individual bones via sliders, build and save poses, sequence them into keyframe animations, and train a Motion Diffusion Transformer on your own data to generate text-to-animation. Training runs locally on your GPU — no cloud, no data leaves your machine.
+Control individual bones via sliders, build and save poses, sequence them into keyframe animations, and train a Motion Diffusion Transformer on your own data to generate text-to-animation. Training can run locally on your GPU or you can connect to cloud with your own configurations. 
 
 ### [Embody Content Creator Studio](Example%20Apps/Embody-Content-Creator-Studio)
 
-Direct and record content with a live UE5 character. Camera presets, environment loading, color grading, animated post-processing effects, ElevenLabs TTS, mic recording, BYOB audio/video, and a stream recorder with multi-clip stitching.
+Direct and record content with a live UE5 character. Camera presets, environment loading, color grading, animated post-processing effects, ElevenLabs TTS, mic recording, BYOB audio/video, and a stream recorder with multi-clip stitching. Live Link with voice chat commands will release soon. 
 
 ---
 
@@ -129,9 +129,11 @@ See [`Commands/Public/README.md`](Commands/Public/README.md) for the full index.
 
 ---
 
-## Automation
+## Automation 
 
-Python CLI for editor and build tasks using UE5's Python Remote Execution plugin.
+This is for editor and is not related to the packaged game builds. The editor version is not yet open source as the packaged game still relies on third party plugins and assets. However these will eventually be replaced and the editor version will be open source as well. Editor content will still be public, but only content in which I have the right to open source.
+
+Python CLI for editor and build tasks using UE5's Python Remote Execution plugin. These scripts can automate simple tasks and perform blueprint introspection allowing LLMs and agents to find the context they need, in order to modify the game, add new features, and release builds. 
 
 ```bash
 # Generate a randomised MetaHuman in the editor
@@ -151,6 +153,8 @@ python master.py package_all --clean
 ---
 
 ## Source Module
+
+This is for editor and is not related to the packaged game builds. The editor version is not yet open source as the packaged game still relies on third party plugins and assets. However these will eventually be replaced and the editor version will be open source as well. Editor content will still be public, but only content in which I have the right to open source.
 
 The `Source/` directory is the C++ layer inside the game that makes all of this possible. Drop it into any UE5 project with Pixel Streaming 2 enabled and compile.
 
