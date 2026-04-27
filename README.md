@@ -1,5 +1,5 @@
 # Embody
-<img width="1380" height="1266" alt="image" src="https://github.com/user-attachments/assets/91fc0b82-2e62-452b-8c7a-b37b1cbc0fbe" />
+<img width="396" height="336" alt="image" src="https://github.com/user-attachments/assets/7c302c18-0a0f-43bb-8e66-eeffd0d0e680" />
 
 
 Unreal Engine 5 is one of the most powerful rendering engines ever built, however it's also notoriously hard to work with. A feature rich editor, complex build pipelines, and a high barrier to entry for anyone who isn't a game developer or animator.
@@ -179,6 +179,9 @@ The `Source/` directory is the C++ layer inside the game that makes all of this 
 4. Compile
 
 **Dependencies:** PixelStreaming2, EnhancedInput, AIModule, NavigationSystem, ProceduralMeshComponent, Networking/Sockets
+
+
+<img width="1380" height="1266" alt="image" src="https://github.com/user-attachments/assets/91fc0b82-2e62-452b-8c7a-b37b1cbc0fbe" />
 
 > `Source/ThirdParty/Lib/` (Whisper CUDA binaries, 47–124 MB) is gitignored. Download from [whisper.cpp releases](https://github.com/ggerganov/whisper.cpp/releases).
 
